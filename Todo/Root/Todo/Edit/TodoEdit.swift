@@ -1,0 +1,3 @@
+extension Todo {
+	enum Edit {}
+}
