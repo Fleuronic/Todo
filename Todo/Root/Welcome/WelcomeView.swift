@@ -1,9 +1,11 @@
 import UIKit
-import ReactiveSwift
-import ReactiveCocoa
+import Combine
+import CombineCocoa
 
 extension Welcome {
 	final class View: UIView {
+		private var cancellables = Set<AnyCancellable>()
+
 		private lazy var welcomeLabel: UILabel = {
 			let label = UILabel()
 			label.text = "Welcome! Please Enter Your Name"
@@ -30,15 +32,25 @@ extension Welcome {
 		init<T: ScreenProxy>(screen: T) where T.Screen == Screen {
 			super.init(frame: .zero)
 
-			let name = screen.reactive.name
-			let canLogIn = name.map(\.isEmpty).negate()
+			let name = screen.publisher(for: \.name)
+			let canLogIn = name.map(\.isEmpty).map(!)
+			let loginButtonAlpha = canLogIn.map { $0 ? 1 : 0.5 as CGFloat }
 
-			nameField.reactive.text <~ name
-			loginButton.reactive.isEnabled <~ canLogIn
-			loginButton.reactive.alpha <~ canLogIn.map { $0 ? 1 : 0.5 }
-
-			screen.reactive.nameTextEdited <~ nameField.reactive.editedText
-			screen.reactive.loginTapped <~ loginButton.reactive.tap
+			name.map { $0 as String? }
+				.assign(to: \.text, on: nameField)
+				.store(in: &cancellables)
+			canLogIn
+				.assign(to: \.isEnabled, on: loginButton)
+				.store(in: &cancellables)
+			loginButtonAlpha
+				.assign(to: \.alpha, on: loginButton)
+				.store(in: &cancellables)
+			nameField.textPublisher
+				.compactMap { $0 }
+				.removeDuplicates()
+				.subscribe(screen.sink(for: \.nameTextEdited))
+			loginButton.tapPublisher
+				.subscribe(screen.sink(for: \.loginTapped))
 		}
 
 		required init?(coder: NSCoder) {

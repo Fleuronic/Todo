@@ -21,8 +21,6 @@
 		1766974F28A94E8C00F9C449 /* WelcomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1766974E28A94E8C00F9C449 /* WelcomeScreen.swift */; };
 		1766975128A94EB500F9C449 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1766975028A94EB500F9C449 /* WelcomeView.swift */; };
 		1766975328A94EE300F9C449 /* WelcomeWorkflow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1766975228A94EE300F9C449 /* WelcomeWorkflow.swift */; };
-		1766975528A9502000F9C449 /* ReactiveCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 1766975428A9502000F9C449 /* ReactiveCocoa */; };
-		1766975728A9509500F9C449 /* Reactive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1766975628A9509500F9C449 /* Reactive.swift */; };
 		1766975D28A95FCE00F9C449 /* TodoListScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1766975C28A95FCE00F9C449 /* TodoListScreen.swift */; };
 		1766976028A9601B00F9C449 /* TodoListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1766975F28A9601B00F9C449 /* TodoListView.swift */; };
 		1766976228A9607500F9C449 /* Todo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1766976128A9607500F9C449 /* Todo.swift */; };
@@ -37,7 +35,8 @@
 		1766977B28A9E96200F9C449 /* TodoEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1766977A28A9E96200F9C449 /* TodoEditView.swift */; };
 		1766977D28AA6EE600F9C449 /* TodoWorkflow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1766977C28AA6EE600F9C449 /* TodoWorkflow.swift */; };
 		1766978328AA944C00F9C449 /* Primitives.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1766978228AA944C00F9C449 /* Primitives.swift */; };
-		1766978828AAD84300F9C449 /* ScreenReactive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1766978728AAD84200F9C449 /* ScreenReactive.swift */; };
+		1766978E28AB253F00F9C449 /* CombineDataSources in Frameworks */ = {isa = PBXBuildFile; productRef = 1766978D28AB253F00F9C449 /* CombineDataSources */; };
+		1766979128AB2B2E00F9C449 /* CombineCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 1766979028AB2B2E00F9C449 /* CombineCocoa */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,7 +74,6 @@
 		1766974E28A94E8C00F9C449 /* WelcomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeScreen.swift; sourceTree = "<group>"; };
 		1766975028A94EB500F9C449 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 		1766975228A94EE300F9C449 /* WelcomeWorkflow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeWorkflow.swift; sourceTree = "<group>"; };
-		1766975628A9509500F9C449 /* Reactive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reactive.swift; sourceTree = "<group>"; };
 		1766975C28A95FCE00F9C449 /* TodoListScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoListScreen.swift; sourceTree = "<group>"; };
 		1766975F28A9601B00F9C449 /* TodoListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoListView.swift; sourceTree = "<group>"; };
 		1766976128A9607500F9C449 /* Todo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Todo.swift; sourceTree = "<group>"; };
@@ -90,7 +88,6 @@
 		1766977A28A9E96200F9C449 /* TodoEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoEditView.swift; sourceTree = "<group>"; };
 		1766977C28AA6EE600F9C449 /* TodoWorkflow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoWorkflow.swift; sourceTree = "<group>"; };
 		1766978228AA944C00F9C449 /* Primitives.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Primitives.swift; sourceTree = "<group>"; };
-		1766978728AAD84200F9C449 /* ScreenReactive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenReactive.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,7 +96,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				1766974B28A94E0900F9C449 /* WorkflowUI in Frameworks */,
-				1766975528A9502000F9C449 /* ReactiveCocoa in Frameworks */,
+				1766979128AB2B2E00F9C449 /* CombineCocoa in Frameworks */,
+				1766978E28AB253F00F9C449 /* CombineDataSources in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -188,12 +186,10 @@
 			isa = PBXGroup;
 			children = (
 				1766973D28A94D4300F9C449 /* Event.swift */,
-				1766975628A9509500F9C449 /* Reactive.swift */,
 				1766974128A94D6100F9C449 /* ReactiveScreen.swift */,
 				1766974328A94D6E00F9C449 /* ReactiveView.swift */,
 				1766974C28A94E3300F9C449 /* ReactiveViewController.swift */,
 				1766973F28A94D5200F9C449 /* ScreenProxy.swift */,
-				1766978728AAD84200F9C449 /* ScreenReactive.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -281,7 +277,8 @@
 			name = Todo;
 			packageProductDependencies = (
 				1766974A28A94E0900F9C449 /* WorkflowUI */,
-				1766975428A9502000F9C449 /* ReactiveCocoa */,
+				1766978D28AB253F00F9C449 /* CombineDataSources */,
+				1766979028AB2B2E00F9C449 /* CombineCocoa */,
 			);
 			productName = Todo;
 			productReference = 170B0CFD28A6DDF40033029D /* Todo.app */;
@@ -356,8 +353,9 @@
 			);
 			mainGroup = 170B0CF428A6DDF40033029D;
 			packageReferences = (
-				170B0D3028A7FEB80033029D /* XCRemoteSwiftPackageReference "ReactiveCocoa" */,
 				1766973928A9477300F9C449 /* XCRemoteSwiftPackageReference "workflow-swift" */,
+				1766978C28AB253F00F9C449 /* XCRemoteSwiftPackageReference "CombineDataSources" */,
+				1766978F28AB2B2E00F9C449 /* XCRemoteSwiftPackageReference "CombineCocoa" */,
 			);
 			productRefGroup = 170B0CFE28A6DDF40033029D /* Products */;
 			projectDirPath = "";
@@ -418,8 +416,6 @@
 				1766974F28A94E8C00F9C449 /* WelcomeScreen.swift in Sources */,
 				1766977328A9CC8900F9C449 /* TodoEditScreen.swift in Sources */,
 				1766975D28A95FCE00F9C449 /* TodoListScreen.swift in Sources */,
-				1766975728A9509500F9C449 /* Reactive.swift in Sources */,
-				1766978828AAD84300F9C449 /* ScreenReactive.swift in Sources */,
 				1766974428A94D6E00F9C449 /* ReactiveView.swift in Sources */,
 				1766976228A9607500F9C449 /* Todo.swift in Sources */,
 				1766976F28A983ED00F9C449 /* ScreenWrapperViewController.swift in Sources */,
@@ -752,20 +748,28 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		170B0D3028A7FEB80033029D /* XCRemoteSwiftPackageReference "ReactiveCocoa" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/ReactiveCocoa/ReactiveCocoa.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 11.0.0;
-			};
-		};
 		1766973928A9477300F9C449 /* XCRemoteSwiftPackageReference "workflow-swift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/square/workflow-swift";
 			requirement = {
 				kind = upToNextMajorVersion;
 				minimumVersion = "1.0.0-rc.1";
+			};
+		};
+		1766978C28AB253F00F9C449 /* XCRemoteSwiftPackageReference "CombineDataSources" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/CombineCommunity/CombineDataSources";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.2.5;
+			};
+		};
+		1766978F28AB2B2E00F9C449 /* XCRemoteSwiftPackageReference "CombineCocoa" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/CombineCommunity/CombineCocoa";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.4.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
@@ -776,10 +780,15 @@
 			package = 1766973928A9477300F9C449 /* XCRemoteSwiftPackageReference "workflow-swift" */;
 			productName = WorkflowUI;
 		};
-		1766975428A9502000F9C449 /* ReactiveCocoa */ = {
+		1766978D28AB253F00F9C449 /* CombineDataSources */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 170B0D3028A7FEB80033029D /* XCRemoteSwiftPackageReference "ReactiveCocoa" */;
-			productName = ReactiveCocoa;
+			package = 1766978C28AB253F00F9C449 /* XCRemoteSwiftPackageReference "CombineDataSources" */;
+			productName = CombineDataSources;
+		};
+		1766979028AB2B2E00F9C449 /* CombineCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1766978F28AB2B2E00F9C449 /* XCRemoteSwiftPackageReference "CombineCocoa" */;
+			productName = CombineCocoa;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

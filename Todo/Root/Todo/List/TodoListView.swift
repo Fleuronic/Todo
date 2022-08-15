@@ -1,11 +1,10 @@
 import UIKit
-import ReactiveSwift
+import Combine
+import CombineDataSources
 
 extension Todo.List {
 	final class View: UIView {
-		private let todoTitles = MutableProperty<[String]>([])
-		private let selectRow: Signal<Int, Never>
-		private let selectRowObserver: Signal<Int, Never>.Observer
+		private var cancellables = Set<AnyCancellable>()
 
 		private lazy var titleLabel: UILabel = {
 			let label = UILabel()
@@ -17,22 +16,27 @@ extension Todo.List {
 
 		private lazy var tableView: UITableView = {
 			let tableView = UITableView()
-			tableView.delegate = self
-			tableView.dataSource = self
 			addSubview(tableView)
 			return tableView
 		}()
 
 		init<T: ScreenProxy>(screen: T) where T.Screen == Screen {
-			(selectRow, selectRowObserver) = Signal<Int, Never>.pipe()
-
 			super.init(frame: .zero)
 
 			backgroundColor = .white
+			
+//			tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
+			tableView.didSelectRowPublisher
+				.map(\.row)
+				.subscribe(screen.sink(for: \.rowSelected))
 
-			todoTitles <~ screen.reactive.todoTitles
-			tableView.reactive.reloadData <~ todoTitles.map { _ in }
-			screen.reactive.rowSelected <~ selectRow
+			let controller = TableViewItemsController<[[String]]>(cellIdentifier: "Cell", cellType: UITableViewCell.self) { cell, _, title in
+				cell.textLabel?.text = title
+			}
+			controller.rowAnimations.insert = .none
+			screen.publisher(for: \.todoTitles)
+				.bind(subscriber: tableView.rowsSubscriber(controller))
+				.store(in: &cancellables)
 		}
 
 		required init?(coder aDecoder: NSCoder) {
@@ -61,27 +65,6 @@ extension Todo.List {
 		}
 	}
 }
-
-// MARK: -
-extension Todo.List.View: UITableViewDelegate {
-	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-		tableView.deselectRow(at: indexPath, animated: true)
-		selectRowObserver.send(value: indexPath.row)
-	}
-}
-
-extension Todo.List.View: UITableViewDataSource {
-	public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		todoTitles.value.count
-	}
-
-	public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-		let cell = UITableViewCell()
-		cell.textLabel?.text = todoTitles.value[indexPath.row]
-		return cell
-	}
-}
-
 // MARK: -
 extension Todo.List.View: ReactiveView {
 	typealias Screen = Todo.List.Screen

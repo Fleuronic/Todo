@@ -1,16 +1,9 @@
 import WorkflowUI
-import ReactiveSwift
+import Combine
 
 protocol ScreenProxy {
 	associatedtype Screen: WorkflowUI.Screen
 
-	func source<T>(for keyPath: KeyPath<Screen, T>) -> SignalProducer<T, Never>
-	func target<T>(for keyPath: KeyPath<Screen, Event<T>>) -> BindingTarget<T>
+	func publisher<T>(for keyPath: KeyPath<Screen, T>) -> AnyPublisher<T, Never>
+	func sink<T>(for keyPath: KeyPath<Screen, Event<T>>) -> Subscribers.Sink<T, Never>
 }
-
-extension ScreenProxy {
-	var reactive: ScreenReactive<Self> {
-		.init(base: self)
-	}
-}
-

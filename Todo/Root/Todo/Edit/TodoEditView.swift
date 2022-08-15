@@ -1,8 +1,10 @@
 import UIKit
-import ReactiveSwift
+import Combine
 
 extension Todo.Edit {
 	final class View: UIView {
+		private var cancellables = Set<AnyCancellable>()
+
 		private lazy var titleField: UITextField = {
 			let textField = UITextField()
 			textField.textAlignment = .center
@@ -23,10 +25,20 @@ extension Todo.Edit {
 		init<T: ScreenProxy>(screen: T) where T.Screen == Screen {
 			super.init(frame: .zero)
 
-			titleField.reactive.text <~ screen.reactive.title
-			noteField.reactive.text <~ screen.reactive.note
-			screen.reactive.titleTextEdited <~ titleField.reactive.editedText
-			screen.reactive.noteTextEdited <~ noteField.reactive.editedText
+			screen.publisher(for: \.title)
+				.map { $0 as String? }
+				.assign(to: \.text, on: titleField)
+				.store(in: &cancellables)
+			screen.publisher(for: \.note)
+				.map { $0 as String? }
+				.assign(to: \.text, on: noteField)
+				.store(in: &cancellables)
+			titleField.textPublisher
+				.compactMap { $0 }
+				.subscribe(screen.sink(for: \.titleTextEdited))
+			noteField.textPublisher
+				.compactMap { $0 }
+				.subscribe(screen.sink(for: \.noteTextEdited))
 		}
 
 		required init?(coder aDecoder: NSCoder) {
