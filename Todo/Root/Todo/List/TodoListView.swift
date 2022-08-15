@@ -2,12 +2,10 @@ import UIKit
 import ReactiveSwift
 
 extension Todo.List {
-	final class View: UIView, ReactiveView {
-		typealias Screen = Todo.List.Screen
-
+	final class View: UIView {
 		private let todoTitles = MutableProperty<[String]>([])
-		private let selectTodo: Signal<Int, Never>
-		private let selectTodoObserver: Signal<Int, Never>.Observer
+		private let selectRow: Signal<Int, Never>
+		private let selectRowObserver: Signal<Int, Never>.Observer
 
 		private lazy var titleLabel: UILabel = {
 			let label = UILabel()
@@ -25,16 +23,16 @@ extension Todo.List {
 			return tableView
 		}()
 
-		init<T: Reactor>(reactor: T) where T.Screen == Screen {
-			(selectTodo, selectTodoObserver) = Signal<Int, Never>.pipe()
+		init<T: ScreenProxy>(screen: T) where T.Screen == Screen {
+			(selectRow, selectRowObserver) = Signal<Int, Never>.pipe()
 
 			super.init(frame: .zero)
 
 			backgroundColor = .white
 
-			todoTitles <~ reactor.todoTitles
+			todoTitles <~ screen.reactive.todoTitles
 			tableView.reactive.reloadData <~ todoTitles.map { _ in }
-			reactor.todoSelected <~ selectTodo
+			screen.reactive.rowSelected <~ selectRow
 		}
 
 		required init?(coder aDecoder: NSCoder) {
@@ -68,7 +66,7 @@ extension Todo.List {
 extension Todo.List.View: UITableViewDelegate {
 	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 		tableView.deselectRow(at: indexPath, animated: true)
-		selectTodoObserver.send(value: indexPath.row)
+		selectRowObserver.send(value: indexPath.row)
 	}
 }
 
@@ -82,6 +80,11 @@ extension Todo.List.View: UITableViewDataSource {
 		cell.textLabel?.text = todoTitles.value[indexPath.row]
 		return cell
 	}
+}
+
+// MARK: -
+extension Todo.List.View: ReactiveView {
+	typealias Screen = Todo.List.Screen
 }
 
 // MARK: -

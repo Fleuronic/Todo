@@ -13,7 +13,7 @@
 		170B0D2228A6DDF60033029D /* TodoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 170B0D2128A6DDF60033029D /* TodoUITests.swift */; };
 		170B0D2428A6DDF60033029D /* TodoUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 170B0D2328A6DDF60033029D /* TodoUITestsLaunchTests.swift */; };
 		1766973E28A94D4300F9C449 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1766973D28A94D4300F9C449 /* Event.swift */; };
-		1766974028A94D5200F9C449 /* Reactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1766973F28A94D5200F9C449 /* Reactor.swift */; };
+		1766974028A94D5200F9C449 /* ScreenProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1766973F28A94D5200F9C449 /* ScreenProxy.swift */; };
 		1766974228A94D6100F9C449 /* ReactiveScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1766974128A94D6100F9C449 /* ReactiveScreen.swift */; };
 		1766974428A94D6E00F9C449 /* ReactiveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1766974328A94D6E00F9C449 /* ReactiveView.swift */; };
 		1766974B28A94E0900F9C449 /* WorkflowUI in Frameworks */ = {isa = PBXBuildFile; productRef = 1766974A28A94E0900F9C449 /* WorkflowUI */; };
@@ -33,10 +33,11 @@
 		1766976D28A983D100F9C449 /* BackStackContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1766976C28A983D100F9C449 /* BackStackContainer.swift */; };
 		1766976F28A983ED00F9C449 /* ScreenWrapperViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1766976E28A983ED00F9C449 /* ScreenWrapperViewController.swift */; };
 		1766977328A9CC8900F9C449 /* TodoEditScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1766977228A9CC8900F9C449 /* TodoEditScreen.swift */; };
-		1766977528A9CC9400F9C449 /* TodoEdit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1766977428A9CC9400F9C449 /* TodoEdit.swift */; };
-		1766977728A9CD1700F9C449 /* TodoList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1766977628A9CD1700F9C449 /* TodoList.swift */; };
 		1766977928A9CEC800F9C449 /* TodoEditWorkflow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1766977828A9CEC800F9C449 /* TodoEditWorkflow.swift */; };
 		1766977B28A9E96200F9C449 /* TodoEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1766977A28A9E96200F9C449 /* TodoEditView.swift */; };
+		1766977D28AA6EE600F9C449 /* TodoWorkflow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1766977C28AA6EE600F9C449 /* TodoWorkflow.swift */; };
+		1766978328AA944C00F9C449 /* Primitives.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1766978228AA944C00F9C449 /* Primitives.swift */; };
+		1766978828AAD84300F9C449 /* ScreenReactive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1766978728AAD84200F9C449 /* ScreenReactive.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,7 +68,7 @@
 		170B0D2128A6DDF60033029D /* TodoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoUITests.swift; sourceTree = "<group>"; };
 		170B0D2328A6DDF60033029D /* TodoUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		1766973D28A94D4300F9C449 /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
-		1766973F28A94D5200F9C449 /* Reactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reactor.swift; sourceTree = "<group>"; };
+		1766973F28A94D5200F9C449 /* ScreenProxy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenProxy.swift; sourceTree = "<group>"; };
 		1766974128A94D6100F9C449 /* ReactiveScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReactiveScreen.swift; sourceTree = "<group>"; };
 		1766974328A94D6E00F9C449 /* ReactiveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReactiveView.swift; sourceTree = "<group>"; };
 		1766974C28A94E3300F9C449 /* ReactiveViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReactiveViewController.swift; sourceTree = "<group>"; };
@@ -85,10 +86,11 @@
 		1766976C28A983D100F9C449 /* BackStackContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackStackContainer.swift; sourceTree = "<group>"; };
 		1766976E28A983ED00F9C449 /* ScreenWrapperViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenWrapperViewController.swift; sourceTree = "<group>"; };
 		1766977228A9CC8900F9C449 /* TodoEditScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoEditScreen.swift; sourceTree = "<group>"; };
-		1766977428A9CC9400F9C449 /* TodoEdit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoEdit.swift; sourceTree = "<group>"; };
-		1766977628A9CD1700F9C449 /* TodoList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoList.swift; sourceTree = "<group>"; };
 		1766977828A9CEC800F9C449 /* TodoEditWorkflow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoEditWorkflow.swift; sourceTree = "<group>"; };
 		1766977A28A9E96200F9C449 /* TodoEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoEditView.swift; sourceTree = "<group>"; };
+		1766977C28AA6EE600F9C449 /* TodoWorkflow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoWorkflow.swift; sourceTree = "<group>"; };
+		1766978228AA944C00F9C449 /* Primitives.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Primitives.swift; sourceTree = "<group>"; };
+		1766978728AAD84200F9C449 /* ScreenReactive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenReactive.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,7 +144,9 @@
 		170B0CFF28A6DDF40033029D /* Todo */ = {
 			isa = PBXGroup;
 			children = (
+				1766978228AA944C00F9C449 /* Primitives.swift */,
 				1766974828A94D9800F9C449 /* Root */,
+				1766978428AA946400F9C449 /* Model */,
 				1766974628A94D8200F9C449 /* Core */,
 				1766976928A983A800F9C449 /* Back Stack */,
 				170B0D0928A6DDF50033029D /* Assets.xcassets */,
@@ -184,11 +188,12 @@
 			isa = PBXGroup;
 			children = (
 				1766973D28A94D4300F9C449 /* Event.swift */,
-				1766973F28A94D5200F9C449 /* Reactor.swift */,
 				1766975628A9509500F9C449 /* Reactive.swift */,
 				1766974128A94D6100F9C449 /* ReactiveScreen.swift */,
 				1766974328A94D6E00F9C449 /* ReactiveView.swift */,
 				1766974C28A94E3300F9C449 /* ReactiveViewController.swift */,
+				1766973F28A94D5200F9C449 /* ScreenProxy.swift */,
+				1766978728AAD84200F9C449 /* ScreenReactive.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -196,7 +201,7 @@
 		1766974728A94D9300F9C449 /* Todo */ = {
 			isa = PBXGroup;
 			children = (
-				1766976128A9607500F9C449 /* Todo.swift */,
+				1766977C28AA6EE600F9C449 /* TodoWorkflow.swift */,
 				1766977128A9CC7B00F9C449 /* List */,
 				1766977028A9CC7400F9C449 /* Edit */,
 			);
@@ -233,7 +238,6 @@
 		1766977028A9CC7400F9C449 /* Edit */ = {
 			isa = PBXGroup;
 			children = (
-				1766977428A9CC9400F9C449 /* TodoEdit.swift */,
 				1766977228A9CC8900F9C449 /* TodoEditScreen.swift */,
 				1766977A28A9E96200F9C449 /* TodoEditView.swift */,
 				1766977828A9CEC800F9C449 /* TodoEditWorkflow.swift */,
@@ -244,12 +248,19 @@
 		1766977128A9CC7B00F9C449 /* List */ = {
 			isa = PBXGroup;
 			children = (
-				1766977628A9CD1700F9C449 /* TodoList.swift */,
 				1766975C28A95FCE00F9C449 /* TodoListScreen.swift */,
 				1766975F28A9601B00F9C449 /* TodoListView.swift */,
 				1766976328A9616800F9C449 /* TodoListWorkflow.swift */,
 			);
 			path = List;
+			sourceTree = "<group>";
+		};
+		1766978428AA946400F9C449 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1766976128A9607500F9C449 /* Todo.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -392,10 +403,11 @@
 			files = (
 				1766976428A9616800F9C449 /* TodoListWorkflow.swift in Sources */,
 				1766973E28A94D4300F9C449 /* Event.swift in Sources */,
-				1766974028A94D5200F9C449 /* Reactor.swift in Sources */,
+				1766974028A94D5200F9C449 /* ScreenProxy.swift in Sources */,
 				1766976D28A983D100F9C449 /* BackStackContainer.swift in Sources */,
 				1766976028A9601B00F9C449 /* TodoListView.swift in Sources */,
 				1766976628A964A900F9C449 /* AppDelegate.swift in Sources */,
+				1766977D28AA6EE600F9C449 /* TodoWorkflow.swift in Sources */,
 				1766977928A9CEC800F9C449 /* TodoEditWorkflow.swift in Sources */,
 				1766976828A9692F00F9C449 /* RootWorkflow.swift in Sources */,
 				1766975328A94EE300F9C449 /* WelcomeWorkflow.swift in Sources */,
@@ -407,12 +419,12 @@
 				1766977328A9CC8900F9C449 /* TodoEditScreen.swift in Sources */,
 				1766975D28A95FCE00F9C449 /* TodoListScreen.swift in Sources */,
 				1766975728A9509500F9C449 /* Reactive.swift in Sources */,
-				1766977728A9CD1700F9C449 /* TodoList.swift in Sources */,
+				1766978828AAD84300F9C449 /* ScreenReactive.swift in Sources */,
 				1766974428A94D6E00F9C449 /* ReactiveView.swift in Sources */,
 				1766976228A9607500F9C449 /* Todo.swift in Sources */,
-				1766977528A9CC9400F9C449 /* TodoEdit.swift in Sources */,
 				1766976F28A983ED00F9C449 /* ScreenWrapperViewController.swift in Sources */,
 				1766974D28A94E3300F9C449 /* ReactiveViewController.swift in Sources */,
+				1766978328AA944C00F9C449 /* Primitives.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

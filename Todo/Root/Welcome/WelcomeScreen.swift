@@ -1,6 +1,3 @@
-enum Welcome {}
-
-// MARK: -
 extension Welcome {
 	struct Screen {
 		let name: String

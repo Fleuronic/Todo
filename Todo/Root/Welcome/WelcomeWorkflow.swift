@@ -29,23 +29,18 @@ extension Welcome.Workflow: Workflow {
 	}
 
 	func render(state: State, context: RenderContext<Self>) -> Rendering {
-		screen(with: state, in: context)
+		let sink = context.makeSink(of: Action.self)
+		return screen(state: state, sink: sink)
 	}
 }
 
 // MARK: -
 private extension Welcome.Workflow {
-	func screen(with state: State, in context: RenderContext<Self>) -> Welcome.Screen {
-		let sink = context.makeSink(of: Action.self)
-
-		return .init(
+	func screen(state: State, sink: Sink<Action>) -> Welcome.Screen {
+		.init(
 			name: state.name,
-			nameTextEdited: { name in
-				sink.send(.updateName(name))
-			},
-			loginTapped: {
-				sink.send(.logIn)
-			}
+			nameTextEdited: { sink.send(.updateName($0)) },
+			loginTapped: { sink.send(.logIn) }
 		)
 	}
 }

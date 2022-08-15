@@ -3,9 +3,7 @@ import ReactiveSwift
 import ReactiveCocoa
 
 extension Welcome {
-	final class View: UIView, ReactiveView {
-		typealias Screen = Welcome.Screen
-
+	final class View: UIView {
 		private lazy var welcomeLabel: UILabel = {
 			let label = UILabel()
 			label.text = "Welcome! Please Enter Your Name"
@@ -29,17 +27,18 @@ extension Welcome {
 			return button
 		}()
 
-		init<T: Reactor>(reactor: T) where T.Screen == Screen {
+		init<T: ScreenProxy>(screen: T) where T.Screen == Screen {
 			super.init(frame: .zero)
 
-			let canLogIn = reactor.name.map(\.isEmpty).negate()
+			let name = screen.reactive.name
+			let canLogIn = name.map(\.isEmpty).negate()
 
-			nameField.reactive.text <~ reactor.name
+			nameField.reactive.text <~ name
 			loginButton.reactive.isEnabled <~ canLogIn
 			loginButton.reactive.alpha <~ canLogIn.map { $0 ? 1 : 0.5 }
 
-			reactor.nameTextEdited <~ nameField.reactive.editedText
-			reactor.loginTapped <~ loginButton.reactive.tap
+			screen.reactive.nameTextEdited <~ nameField.reactive.editedText
+			screen.reactive.loginTapped <~ loginButton.reactive.tap
 		}
 
 		required init?(coder: NSCoder) {
@@ -77,6 +76,11 @@ extension Welcome {
 			).insetBy(dx: inset, dy: 0.0)
 		}
 	}
+}
+
+// MARK: -
+extension Welcome.View: ReactiveView {
+	typealias Screen = Welcome.Screen
 }
 
 // MARK: -

@@ -1,15 +1,13 @@
 import Workflow
 import WorkflowUI
 
-enum Root {}
-
 extension Root {
 	struct Workflow {}
 }
 
 // MARK: -
 extension Root.Workflow {
-	enum Action: WorkflowAction {
+	enum Action {
 		case logIn(name: String)
 		case logOut
 	}
@@ -36,8 +34,8 @@ extension Root.Workflow: Workflow {
 		case .welcome:
 			return .init(items: [welcomeItem])
 		case let .todo(name):
-			let todoListItems = todoListItems(with: name, in: context)
-			return .init(items: [welcomeItem] + todoListItems)
+			let todoItems = todoItems(with: name, in: context)
+			return .init(items: [welcomeItem] + todoItems)
 		}
 	}
 }
@@ -54,8 +52,8 @@ private extension Root.Workflow {
 		)
 	}
 
-	func todoListItems(with name: String, in context: RenderContext<Self>) -> [BackStackItem] {
-		Todo.List.Workflow(name: name)
+	func todoItems(with name: String, in context: RenderContext<Self>) -> [BackStackItem] {
+		Todo.Workflow(name: name)
 			.mapOutput(action)
 			.rendered(in: context)
 	}
@@ -67,8 +65,8 @@ private extension Root.Workflow {
 		}
 	}
 
-	func action(for todoListOutput: Todo.List.Workflow.Output) -> Action {
-		switch todoListOutput {
+	func action(for todoOutput: Todo.Workflow.Output) -> Action {
+		switch todoOutput {
 		case .end:
 			return .logOut
 		}
@@ -76,7 +74,7 @@ private extension Root.Workflow {
 }
 
 // MARK: -
-extension Root.Workflow.Action {
+extension Root.Workflow.Action: WorkflowAction {
 	typealias WorkflowType = Root.Workflow
 
 	func apply(toState state: inout Root.Workflow.State) -> Root.Workflow.Output? {

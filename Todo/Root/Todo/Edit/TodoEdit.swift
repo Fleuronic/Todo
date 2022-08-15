@@ -1,3 +1,0 @@
-extension Todo {
-	enum Edit {}
-}

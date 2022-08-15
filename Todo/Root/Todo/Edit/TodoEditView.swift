@@ -2,9 +2,7 @@ import UIKit
 import ReactiveSwift
 
 extension Todo.Edit {
-	final class View: UIView, ReactiveView {
-		typealias Screen = Todo.Edit.Screen
-
+	final class View: UIView {
 		private lazy var titleField: UITextField = {
 			let textField = UITextField()
 			textField.textAlignment = .center
@@ -22,13 +20,13 @@ extension Todo.Edit {
 			return textView
 		}()
 
-		init<T: Reactor>(reactor: T) where T.Screen == Screen {
+		init<T: ScreenProxy>(screen: T) where T.Screen == Screen {
 			super.init(frame: .zero)
 
-			titleField.reactive.text <~ reactor.title
-			noteField.reactive.text <~ reactor.note
-			reactor.titleTextEdited <~ titleField.reactive.editedText
-			reactor.noteTextEdited <~ noteField.reactive.editedText
+			titleField.reactive.text <~ screen.reactive.title
+			noteField.reactive.text <~ screen.reactive.note
+			screen.reactive.titleTextEdited <~ titleField.reactive.editedText
+			screen.reactive.noteTextEdited <~ noteField.reactive.editedText
 		}
 
 		required init?(coder aDecoder: NSCoder) {
@@ -49,8 +47,7 @@ extension Todo.Edit {
 				y: yOffset,
 				width: bounds.maxX,
 				height: titleHeight
-			)
-			.insetBy(dx: widthInset, dy: 0)
+			).insetBy(dx: widthInset, dy: 0)
 
 			yOffset += titleHeight + spacing
 
@@ -59,14 +56,17 @@ extension Todo.Edit {
 				y: yOffset,
 				width: bounds.maxX,
 				height: bounds.maxY - yOffset
-			)
-			.insetBy(dx: widthInset, dy: 0)
+			).insetBy(dx: widthInset, dy: 0)
 		}
 	}
+}
+
+// MARK: -
+extension Todo.Edit.View: ReactiveView {
+	typealias Screen = Todo.Edit.Screen
 }
 
 // MARK: -
 extension Todo.Edit.Screen: ReactiveScreen {
 	typealias View = Todo.Edit.View
 }
-

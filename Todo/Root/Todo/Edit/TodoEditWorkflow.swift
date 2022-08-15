@@ -9,7 +9,7 @@ extension Todo.Edit {
 
 // MARK: -
 extension Todo.Edit.Workflow {
-	enum Action: WorkflowAction {
+	enum Action {
 		case updateTitle(String)
 		case updateNote(String)
 		case saveChanges
@@ -26,7 +26,7 @@ extension Todo.Edit.Workflow: Workflow {
 	}
 
 	enum Output {
-		case save(Todo)
+		case editedTodo(Todo)
 		case cancellation
 	}
 
@@ -35,31 +35,25 @@ extension Todo.Edit.Workflow: Workflow {
 	}
 
 	func render(state: State, context: RenderContext<Self>) -> Rendering {
-		item(with: state, in: context)
+		let sink = context.makeSink(of: Action.self)
+		return item(state: state, sink: sink)
 	}
 }
 
 // MARK: -
 private extension Todo.Edit.Workflow {
-	func screen(with state: State, in context: RenderContext<Self>) -> Todo.Edit.Screen {
-		let sink = context.makeSink(of: Action.self)
-
-		return .init(
+	func screen(state: State, sink: Sink<Action>) -> Todo.Edit.Screen {
+		.init(
 			title: state.todo.title,
 			note: state.todo.note,
-			titleTextEdited: { text in
-				sink.send(.updateTitle(text))
-			}, noteTextEdited: { text in
-				sink.send(.updateNote(text))
-			}
+			titleTextEdited: { sink.send(.updateTitle($0)) },
+			noteTextEdited: { sink.send(.updateNote($0)) }
 		)
 	}
 
-	func item(with state: State, in context: RenderContext<Self>) -> BackStackItem {
-		let sink = context.makeSink(of: Action.self)
-
-		return .init(
-			screen: screen(with: state, in: context).asAnyScreen(),
+	func item(state: State, sink: Sink<Action>) -> BackStackItem {
+		.init(
+			screen: screen(state: state, sink: sink).asAnyScreen(),
 			barContent: .init(
 				title: "Edit",
 				leftItem: .button(
@@ -74,7 +68,7 @@ private extension Todo.Edit.Workflow {
 }
 
 // MARK: -
-extension Todo.Edit.Workflow.Action {
+extension Todo.Edit.Workflow.Action: WorkflowAction {
 	typealias WorkflowType = Todo.Edit.Workflow
 
 	func apply(toState state: inout Todo.Edit.Workflow.State) -> Todo.Edit.Workflow.Output? {
@@ -84,7 +78,7 @@ extension Todo.Edit.Workflow.Action {
 		case let .updateNote(note):
 			state.todo.note = note
 		case .saveChanges:
-			return .save(state.todo)
+			return .editedTodo(state.todo)
 		case .discardChanges:
 			return .cancellation
 		}

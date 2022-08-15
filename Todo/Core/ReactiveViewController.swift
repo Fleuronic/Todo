@@ -12,7 +12,7 @@ class ReactiveViewController<View: ReactiveView>: ScreenViewController<View.Scre
 	required init(screen: View.Screen, environment: ViewEnvironment) {
 		(context, observer) = Signal<Context, Never>.pipe()
 		super.init(screen: screen, environment: environment)
-		contentView = .init(reactor: self)
+		contentView = .init(screen: self)
 	}
 
 	override func viewDidLoad() {
@@ -32,8 +32,8 @@ class ReactiveViewController<View: ReactiveView>: ScreenViewController<View.Scre
 }
 
 // MARK: -
-extension ReactiveViewController: Reactor {
-	subscript<T>(dynamicMember keyPath: KeyPath<View.Screen, T>) -> SignalProducer<T, Never> {
+extension ReactiveViewController: ScreenProxy {
+	func source<T>(for keyPath: KeyPath<View.Screen, T>) -> SignalProducer<T, Never> {
 		context
 			.map { $0.0 }
 			.map(keyPath)
@@ -41,7 +41,7 @@ extension ReactiveViewController: Reactor {
 			.prefix(value: screen[keyPath: keyPath])
 	}
 
-	subscript<T>(dynamicMember keyPath: KeyPath<View.Screen, (T) -> Void>) -> BindingTarget<T> {
+	func target<T>(for keyPath: KeyPath<View.Screen, Event<T>>) -> BindingTarget<T> {
 		.init(lifetime: reactive.lifetime, action: screen[keyPath: keyPath])
 	}
 }
