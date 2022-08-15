@@ -1,5 +1,4 @@
 import UIKit
-import ReactiveSwift
 
 extension Todo.Edit {
 	final class View: UIView {
@@ -23,10 +22,10 @@ extension Todo.Edit {
 		init<T: ScreenProxy>(screen: T) where T.Screen == Screen {
 			super.init(frame: .zero)
 
-			titleField.reactive.text <~ screen.reactive.title
-			noteField.reactive.text <~ screen.reactive.note
-			screen.reactive.titleTextEdited <~ titleField.reactive.editedText
-			screen.reactive.noteTextEdited <~ noteField.reactive.editedText
+			screen.reactive.title.bind(to: titleField)
+			screen.reactive.note.bind(to: noteField)
+			titleField.reactive.text.ignoreNils().bind(to: screen.reactive.titleTextEdited)
+			noteField.reactive.text.ignoreNils().bind(to: screen.reactive.noteTextEdited)
 		}
 
 		required init?(coder aDecoder: NSCoder) {

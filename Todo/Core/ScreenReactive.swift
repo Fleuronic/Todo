@@ -1,4 +1,5 @@
-import ReactiveSwift
+import ReactiveKit
+import Bond
 
 @dynamicMemberLookup struct ScreenReactive<Base: ScreenProxy> {
 	private let base: Base
@@ -7,11 +8,11 @@ import ReactiveSwift
 		self.base = base
 	}
 
-	subscript<T>(dynamicMember keyPath: KeyPath<Base.Screen, T>) -> SignalProducer<T, Never> {
+	subscript<T>(dynamicMember keyPath: KeyPath<Base.Screen, T>) -> SafeSignal<T> {
 		base.source(for: keyPath)
 	}
 
-	subscript<T>(dynamicMember keyPath: KeyPath<Base.Screen, Event<T>>) -> BindingTarget<T> {
+	subscript<T>(dynamicMember keyPath: KeyPath<Base.Screen, Event<T>>) -> Bond<T> {
 		base.target(for: keyPath)
 	}
 }

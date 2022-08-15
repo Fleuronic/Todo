@@ -1,12 +1,30 @@
 {
   "pins" : [
     {
-      "identity" : "reactivecocoa",
+      "identity" : "bond",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/ReactiveCocoa/ReactiveCocoa.git",
+      "location" : "https://github.com/DeclarativeHub/Bond",
       "state" : {
-        "revision" : "579364393ad587352bcce133b7b3f73392cb585b",
-        "version" : "11.2.2"
+        "revision" : "146943c0bc03a93c48fb6c57db4e39f4b38ba74b",
+        "version" : "7.8.1"
+      }
+    },
+    {
+      "identity" : "differ",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/tonyarnold/Differ.git",
+      "state" : {
+        "revision" : "5520fda947f1f9777a806389c2ba587219bc0538",
+        "version" : "1.4.6"
+      }
+    },
+    {
+      "identity" : "reactivekit",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/DeclarativeHub/ReactiveKit.git",
+      "state" : {
+        "revision" : "dfb63f820aa54946c4cbcbe1b6024863a143d3a2",
+        "version" : "3.19.1"
       }
     },
     {

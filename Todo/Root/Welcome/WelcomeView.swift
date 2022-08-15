@@ -1,6 +1,4 @@
 import UIKit
-import ReactiveSwift
-import ReactiveCocoa
 
 extension Welcome {
 	final class View: UIView {
@@ -31,14 +29,14 @@ extension Welcome {
 			super.init(frame: .zero)
 
 			let name = screen.reactive.name
-			let canLogIn = name.map(\.isEmpty).negate()
+			let canLogIn = name.map(\.isEmpty).map(!)
+			let loginButtonAlpha = canLogIn.map { $0 ? 1 : 0.5 as CGFloat }
 
-			nameField.reactive.text <~ name
-			loginButton.reactive.isEnabled <~ canLogIn
-			loginButton.reactive.alpha <~ canLogIn.map { $0 ? 1 : 0.5 }
-
-			screen.reactive.nameTextEdited <~ nameField.reactive.editedText
-			screen.reactive.loginTapped <~ loginButton.reactive.tap
+			name.bind(to: nameField)
+			canLogIn.bind(to: loginButton.reactive.isEnabled)
+			loginButtonAlpha.bind(to: loginButton.reactive.alpha)
+			nameField.reactive.text.ignoreNils().removeDuplicates().bind(to: screen.reactive.nameTextEdited)
+			loginButton.reactive.tap.bind(to: screen.reactive.loginTapped)
 		}
 
 		required init?(coder: NSCoder) {
