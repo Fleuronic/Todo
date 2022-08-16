@@ -1,3 +1,4 @@
+import UIKit
 import WorkflowUI
 import ReactiveKit
 import Bond
@@ -16,13 +17,18 @@ class ReactiveViewController<View: ReactiveView>: ScreenViewController<View.Scre
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
+
 		view.addSubview(contentView)
+		contentView.translatesAutoresizingMaskIntoConstraints = false
+
+		NSLayoutConstraint.activate([
+			contentView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
+			contentView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
+			contentView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+			contentView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
+		])
 	}
 
-	override func viewDidLayoutSubviews() {
-		super.viewDidLayoutSubviews()
-		contentView.frame = view.bounds.inset(by: view.safeAreaInsets)
-	}
 
 	override func screenDidChange(from previousScreen: View.Screen, previousEnvironment: ViewEnvironment) {
 		super.screenDidChange(from: previousScreen, previousEnvironment: previousEnvironment)

@@ -1,61 +1,35 @@
 import UIKit
+import Layoutless
 
 extension Todo.Edit {
-	final class View: UIView {
-		private lazy var titleField: UITextField = {
-			let textField = UITextField()
-			textField.textAlignment = .center
-			textField.layer.borderColor = UIColor.black.cgColor
-			textField.layer.borderWidth = 1
-			addSubview(textField)
-			return textField
-		}()
-
-		private lazy var noteField: UITextView = {
-			let textView = UITextView()
-			textView.layer.borderColor = UIColor.gray.cgColor
-			textView.layer.borderWidth = 1
-			addSubview(textView)
-			return textView
-		}()
+	final class View: UI.View {
+		private let titleField = UITextField()
+		private let noteField = UITextView()
 
 		init<T: ScreenProxy>(screen: T) where T.Screen == Screen {
 			super.init(frame: .zero)
 
-			screen.reactive.title.bind(to: titleField)
-			screen.reactive.note.bind(to: noteField)
-			titleField.reactive.text.ignoreNils().bind(to: screen.reactive.titleTextEdited)
-			noteField.reactive.text.ignoreNils().bind(to: screen.reactive.noteTextEdited)
+			titleField <~ screen.reactive.title
+			titleField.reactive.text.ignoreNils() ~> screen.reactive.titleTextEdited
+			titleField.textAlignment = .center
+			titleField.layer.borderWidth = 1
+			titleField.layer.borderColor = UIColor.black.cgColor
+
+			noteField <~ screen.reactive.note
+			noteField.reactive.text.ignoreNils() ~> screen.reactive.noteTextEdited
+			noteField.layer.borderWidth = 1
+			noteField.layer.borderColor = UIColor.gray.cgColor
 		}
 
 		required init?(coder aDecoder: NSCoder) {
 			fatalError()
 		}
 
-		override public func layoutSubviews() {
-			super.layoutSubviews()
-
-			let titleHeight: CGFloat = 44
-			let spacing: CGFloat = 8
-			let widthInset: CGFloat = 8
-
-			var yOffset = bounds.minY
-
-			titleField.frame = CGRect(
-				x: bounds.minX,
-				y: yOffset,
-				width: bounds.maxX,
-				height: titleHeight
-			).insetBy(dx: widthInset, dy: 0)
-
-			yOffset += titleHeight + spacing
-
-			noteField.frame = CGRect(
-				x: bounds.minX,
-				y: yOffset,
-				width: bounds.maxX,
-				height: bounds.maxY - yOffset
-			).insetBy(dx: widthInset, dy: 0)
+		override var subviewsLayout: AnyLayout {
+			stack(.vertical, spacing: 12)(
+				titleField.sizing(toHeight: 44),
+				noteField
+			).fillingParent()
 		}
 	}
 }

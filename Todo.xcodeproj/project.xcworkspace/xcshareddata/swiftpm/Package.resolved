@@ -19,6 +19,15 @@
       }
     },
     {
+      "identity" : "layoutless",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/DeclarativeHub/Layoutless",
+      "state" : {
+        "revision" : "50ae5ab4cb9bf676c1901f4ba0f267f27e68d0a7",
+        "version" : "0.4.3"
+      }
+    },
+    {
       "identity" : "reactivekit",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/DeclarativeHub/ReactiveKit.git",

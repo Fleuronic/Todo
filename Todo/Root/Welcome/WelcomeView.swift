@@ -1,29 +1,11 @@
 import UIKit
+import Layoutless
 
 extension Welcome {
-	final class View: UIView {
-		private lazy var welcomeLabel: UILabel = {
-			let label = UILabel()
-			label.text = "Welcome! Please Enter Your Name"
-			label.textAlignment = .center
-			addSubview(label)
-			return label
-		}()
-
-		private lazy var nameField: UITextField = {
-			let textField = UITextField()
-			textField.backgroundColor = UIColor(white: 0.92, alpha: 1.0)
-			addSubview(textField)
-			return textField
-		}()
-
-		private lazy var loginButton: UIButton = {
-			let button = UIButton()
-			button.setTitle("Login", for: .normal)
-			button.backgroundColor = UIColor(red: 41 / 255, green: 150 / 255, blue: 204 / 255, alpha: 1.0)
-			addSubview(button)
-			return button
-		}()
+	final class View: UI.View {
+		private let welcomeLabel = UILabel()
+		private let nameField = UITextField()
+		private let loginButton = UIButton()
 
 		init<T: ScreenProxy>(screen: T) where T.Screen == Screen {
 			super.init(frame: .zero)
@@ -32,46 +14,38 @@ extension Welcome {
 			let canLogIn = name.map(\.isEmpty).map(!)
 			let loginButtonAlpha = canLogIn.map { $0 ? 1 : 0.5 as CGFloat }
 
-			name.bind(to: nameField)
-			canLogIn.bind(to: loginButton.reactive.isEnabled)
-			loginButtonAlpha.bind(to: loginButton.reactive.alpha)
-			nameField.reactive.text.ignoreNils().removeDuplicates().bind(to: screen.reactive.nameTextEdited)
-			loginButton.reactive.tap.bind(to: screen.reactive.loginTapped)
+			welcomeLabel.text = "Welcome! Please Enter Your Name"
+			welcomeLabel.textAlignment = .center
+
+			nameField <~ name
+			nameField.reactive.text.ignoreNils().removeDuplicates() ~> screen.reactive.nameTextEdited
+			nameField.backgroundColor = UIColor(white: 0.92, alpha: 1.0)
+
+			loginButton.setTitle("Login", for: .normal)
+			loginButton.backgroundColor = UIColor(red: 41 / 255, green: 150 / 255, blue: 204 / 255, alpha: 1.0)
+			loginButton.reactive.isEnabled <~ canLogIn
+			loginButton.reactive.alpha <~ loginButtonAlpha
+			loginButton.reactive.tap ~> screen.reactive.loginTapped
 		}
 
 		required init?(coder: NSCoder) {
 			fatalError()
 		}
 
-		override public func layoutSubviews() {
-			super.layoutSubviews()
-
-			let inset: CGFloat = 12
-			let height: CGFloat = 44
-			var yOffset = (bounds.size.height - (2 * height + inset)) / 2
-
-			welcomeLabel.frame = .init(
-				x: bounds.origin.x,
-				y: bounds.origin.y,
-				width: bounds.size.width,
-				height: yOffset
-			)
-
-			nameField.frame = .init(
-				x: bounds.origin.x,
-				y: yOffset,
-				width: bounds.size.width,
-				height: height
-			).insetBy(dx: inset, dy: 0.0)
-
-			yOffset += height + inset
-
-			loginButton.frame = .init(
-				x: bounds.origin.x,
-				y: yOffset,
-				width: bounds.size.width,
-				height: height
-			).insetBy(dx: inset, dy: 0.0)
+		override var subviewsLayout: AnyLayout {
+			stack(.vertical)(
+				UIView().addingLayout(welcomeLabel.centeringInParent()),
+				stack(.vertical, spacing: 12)(
+					nameField.sizing(toHeight: 44),
+					loginButton.sizing(toHeight: 44)
+				).insetting(
+					leftBy: 12,
+					rightBy: 12,
+					topBy: 0,
+					bottomBy: 0
+				).centeringVerticallyInParent(),
+				UIView()
+			).fillingParent()
 		}
 	}
 }

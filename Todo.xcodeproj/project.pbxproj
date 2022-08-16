@@ -37,6 +37,8 @@
 		1766978328AA944C00F9C449 /* Primitives.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1766978228AA944C00F9C449 /* Primitives.swift */; };
 		1766978828AAD84300F9C449 /* ScreenReactive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1766978728AAD84200F9C449 /* ScreenReactive.swift */; };
 		1766978B28AB02A000F9C449 /* Bond in Frameworks */ = {isa = PBXBuildFile; productRef = 1766978A28AB02A000F9C449 /* Bond */; };
+		17F7F2B628AB3FA700846774 /* Binding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F7F2B528AB3FA700846774 /* Binding.swift */; };
+		17F7F2B928AB42DF00846774 /* Layoutless in Frameworks */ = {isa = PBXBuildFile; productRef = 17F7F2B828AB42DF00846774 /* Layoutless */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,6 +91,7 @@
 		1766977C28AA6EE600F9C449 /* TodoWorkflow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoWorkflow.swift; sourceTree = "<group>"; };
 		1766978228AA944C00F9C449 /* Primitives.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Primitives.swift; sourceTree = "<group>"; };
 		1766978728AAD84200F9C449 /* ScreenReactive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenReactive.swift; sourceTree = "<group>"; };
+		17F7F2B528AB3FA700846774 /* Binding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Binding.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +99,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				17F7F2B928AB42DF00846774 /* Layoutless in Frameworks */,
 				1766974B28A94E0900F9C449 /* WorkflowUI in Frameworks */,
 				1766978B28AB02A000F9C449 /* Bond in Frameworks */,
 			);
@@ -186,6 +190,7 @@
 			isa = PBXGroup;
 			children = (
 				1766973D28A94D4300F9C449 /* Event.swift */,
+				17F7F2B528AB3FA700846774 /* Binding.swift */,
 				1766974128A94D6100F9C449 /* ReactiveScreen.swift */,
 				1766974328A94D6E00F9C449 /* ReactiveView.swift */,
 				1766974C28A94E3300F9C449 /* ReactiveViewController.swift */,
@@ -279,6 +284,7 @@
 			packageProductDependencies = (
 				1766974A28A94E0900F9C449 /* WorkflowUI */,
 				1766978A28AB02A000F9C449 /* Bond */,
+				17F7F2B828AB42DF00846774 /* Layoutless */,
 			);
 			productName = Todo;
 			productReference = 170B0CFD28A6DDF40033029D /* Todo.app */;
@@ -355,6 +361,7 @@
 			packageReferences = (
 				1766973928A9477300F9C449 /* XCRemoteSwiftPackageReference "workflow-swift" */,
 				1766978928AB02A000F9C449 /* XCRemoteSwiftPackageReference "Bond" */,
+				17F7F2B728AB42DF00846774 /* XCRemoteSwiftPackageReference "Layoutless" */,
 			);
 			productRefGroup = 170B0CFE28A6DDF40033029D /* Products */;
 			projectDirPath = "";
@@ -417,6 +424,7 @@
 				1766975D28A95FCE00F9C449 /* TodoListScreen.swift in Sources */,
 				1766978828AAD84300F9C449 /* ScreenReactive.swift in Sources */,
 				1766974428A94D6E00F9C449 /* ReactiveView.swift in Sources */,
+				17F7F2B628AB3FA700846774 /* Binding.swift in Sources */,
 				1766976228A9607500F9C449 /* Todo.swift in Sources */,
 				1766976F28A983ED00F9C449 /* ScreenWrapperViewController.swift in Sources */,
 				1766974D28A94E3300F9C449 /* ReactiveViewController.swift in Sources */,
@@ -764,6 +772,14 @@
 				minimumVersion = 7.0.0;
 			};
 		};
+		17F7F2B728AB42DF00846774 /* XCRemoteSwiftPackageReference "Layoutless" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/DeclarativeHub/Layoutless";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.4.3;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -776,6 +792,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 1766978928AB02A000F9C449 /* XCRemoteSwiftPackageReference "Bond" */;
 			productName = Bond;
+		};
+		17F7F2B828AB42DF00846774 /* Layoutless */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 17F7F2B728AB42DF00846774 /* XCRemoteSwiftPackageReference "Layoutless" */;
+			productName = Layoutless;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
