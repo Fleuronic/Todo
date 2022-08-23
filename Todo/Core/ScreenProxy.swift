@@ -2,15 +2,9 @@ import WorkflowUI
 import ReactiveKit
 import Bond
 
-protocol ScreenProxy<Screen> {
+@dynamicMemberLookup protocol ScreenProxy<Screen> {
 	associatedtype Screen: WorkflowUI.Screen
 
-	func source<T>(for keyPath: KeyPath<Screen, T>) -> SafeSignal<T>
-	func target<T>(for keyPath: KeyPath<Screen, Event<T>>) -> Bond<T>
-}
-
-extension ScreenProxy {
-	var reactive: ScreenReactive<Self> {
-		.init(base: self)
-	}
+	subscript<T>(dynamicMember keyPath: KeyPath<Screen, T>) -> SafeSignal<T> { get }
+	subscript<T>(dynamicMember keyPath: KeyPath<Screen, Event<T>>) -> Bond<T> { get }
 }

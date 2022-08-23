@@ -7,12 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		170B0D0A28A6DDF50033029D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 170B0D0928A6DDF50033029D /* Assets.xcassets */; };
 		170B0D0D28A6DDF50033029D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 170B0D0B28A6DDF50033029D /* LaunchScreen.storyboard */; };
 		170B0D1828A6DDF60033029D /* TodoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 170B0D1728A6DDF60033029D /* TodoTests.swift */; };
 		170B0D2228A6DDF60033029D /* TodoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 170B0D2128A6DDF60033029D /* TodoUITests.swift */; };
 		170B0D2428A6DDF60033029D /* TodoUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 170B0D2328A6DDF60033029D /* TodoUITestsLaunchTests.swift */; };
 		1733301628AC75510002C9BF /* Reactive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1733301528AC75510002C9BF /* Reactive.swift */; };
+		1735B3E728B578E700C773E1 /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1735B3E628B578E700C773E1 /* Font.swift */; };
+		1735B3F828B587C600C773E1 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1735B3FA28B587C600C773E1 /* Localizable.strings */; };
 		1766973E28A94D4300F9C449 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1766973D28A94D4300F9C449 /* Event.swift */; };
 		1766974028A94D5200F9C449 /* ScreenProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1766973F28A94D5200F9C449 /* ScreenProxy.swift */; };
 		1766974228A94D6100F9C449 /* ReactiveScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1766974128A94D6100F9C449 /* ReactiveScreen.swift */; };
@@ -36,7 +37,6 @@
 		1766977B28A9E96200F9C449 /* TodoEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1766977A28A9E96200F9C449 /* TodoEditView.swift */; };
 		1766977D28AA6EE600F9C449 /* TodoWorkflow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1766977C28AA6EE600F9C449 /* TodoWorkflow.swift */; };
 		1766978328AA944C00F9C449 /* Primitives.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1766978228AA944C00F9C449 /* Primitives.swift */; };
-		1766978828AAD84300F9C449 /* ScreenReactive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1766978728AAD84200F9C449 /* ScreenReactive.swift */; };
 		1766978B28AB02A000F9C449 /* Bond in Frameworks */ = {isa = PBXBuildFile; productRef = 1766978A28AB02A000F9C449 /* Bond */; };
 		17D8ADDF28B52EEE003D201C /* Spacing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D8ADDE28B52EEE003D201C /* Spacing.swift */; };
 		17D8ADE228B530FC003D201C /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D8ADE128B530FC003D201C /* Stack.swift */; };
@@ -48,6 +48,15 @@
 		17D8ADEE28B5531A003D201C /* Width.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D8ADED28B5531A003D201C /* Width.swift */; };
 		17D8ADF028B5532C003D201C /* Percentage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D8ADEF28B5532C003D201C /* Percentage.swift */; };
 		17D8ADF428B5535D003D201C /* LayoutBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D8ADF328B5535D003D201C /* LayoutBuilder.swift */; };
+		17D8ADF628B556B4003D201C /* BorderWidth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D8ADF528B556B4003D201C /* BorderWidth.swift */; };
+		17D8ADFA28B55D93003D201C /* Icons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 17D8ADF928B55D93003D201C /* Icons.xcassets */; };
+		17D8ADFC28B55DA1003D201C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 17D8ADFB28B55DA1003D201C /* Images.xcassets */; };
+		17D8ADFE28B55DA9003D201C /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 17D8ADFD28B55DA9003D201C /* Colors.xcassets */; };
+		17D8AE0328B560DF003D201C /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D8AE0028B560DF003D201C /* Strings.swift */; };
+		17D8AE0428B560DF003D201C /* Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D8AE0128B560DF003D201C /* Images.swift */; };
+		17D8AE0528B560DF003D201C /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D8AE0228B560DF003D201C /* Colors.swift */; };
+		17D8AE0828B562B9003D201C /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D8AE0728B562B9003D201C /* Theme.swift */; };
+		17D8AE0A28B56321003D201C /* Text.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D8AE0928B56321003D201C /* Text.swift */; };
 		17F7F2B628AB3FA700846774 /* Binding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F7F2B528AB3FA700846774 /* Binding.swift */; };
 		17F7F2B928AB42DF00846774 /* Layoutless in Frameworks */ = {isa = PBXBuildFile; productRef = 17F7F2B828AB42DF00846774 /* Layoutless */; };
 /* End PBXBuildFile section */
@@ -71,7 +80,6 @@
 
 /* Begin PBXFileReference section */
 		170B0CFD28A6DDF40033029D /* Todo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Todo.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		170B0D0928A6DDF50033029D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		170B0D0C28A6DDF50033029D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		170B0D0E28A6DDF50033029D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		170B0D1328A6DDF60033029D /* TodoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TodoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -80,6 +88,9 @@
 		170B0D2128A6DDF60033029D /* TodoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoUITests.swift; sourceTree = "<group>"; };
 		170B0D2328A6DDF60033029D /* TodoUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		1733301528AC75510002C9BF /* Reactive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reactive.swift; sourceTree = "<group>"; };
+		1735B3E628B578E700C773E1 /* Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
+		1735B3F928B587C600C773E1 /* eo */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = eo; path = eo.lproj/Localizable.strings; sourceTree = "<group>"; };
+		1735B3FB28B587E100C773E1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		1766973D28A94D4300F9C449 /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		1766973F28A94D5200F9C449 /* ScreenProxy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenProxy.swift; sourceTree = "<group>"; };
 		1766974128A94D6100F9C449 /* ReactiveScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReactiveScreen.swift; sourceTree = "<group>"; };
@@ -102,7 +113,6 @@
 		1766977A28A9E96200F9C449 /* TodoEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoEditView.swift; sourceTree = "<group>"; };
 		1766977C28AA6EE600F9C449 /* TodoWorkflow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoWorkflow.swift; sourceTree = "<group>"; };
 		1766978228AA944C00F9C449 /* Primitives.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Primitives.swift; sourceTree = "<group>"; };
-		1766978728AAD84200F9C449 /* ScreenReactive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenReactive.swift; sourceTree = "<group>"; };
 		17D8ADDE28B52EEE003D201C /* Spacing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spacing.swift; sourceTree = "<group>"; };
 		17D8ADE128B530FC003D201C /* Stack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stack.swift; sourceTree = "<group>"; };
 		17D8ADE328B539E9003D201C /* Height.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Height.swift; sourceTree = "<group>"; };
@@ -113,6 +123,15 @@
 		17D8ADED28B5531A003D201C /* Width.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Width.swift; sourceTree = "<group>"; };
 		17D8ADEF28B5532C003D201C /* Percentage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Percentage.swift; sourceTree = "<group>"; };
 		17D8ADF328B5535D003D201C /* LayoutBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutBuilder.swift; sourceTree = "<group>"; };
+		17D8ADF528B556B4003D201C /* BorderWidth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BorderWidth.swift; sourceTree = "<group>"; };
+		17D8ADF928B55D93003D201C /* Icons.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Icons.xcassets; sourceTree = "<group>"; };
+		17D8ADFB28B55DA1003D201C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		17D8ADFD28B55DA9003D201C /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		17D8AE0028B560DF003D201C /* Strings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
+		17D8AE0128B560DF003D201C /* Images.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Images.swift; sourceTree = "<group>"; };
+		17D8AE0228B560DF003D201C /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		17D8AE0728B562B9003D201C /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		17D8AE0928B56321003D201C /* Text.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Text.swift; sourceTree = "<group>"; };
 		17F7F2B528AB3FA700846774 /* Binding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Binding.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -168,18 +187,16 @@
 		170B0CFF28A6DDF40033029D /* Todo */ = {
 			isa = PBXGroup;
 			children = (
-				1766978228AA944C00F9C449 /* Primitives.swift */,
-				17D8ADE728B551F5003D201C /* Metrics.swift */,
+				17D8ADF728B559C7003D201C /* App */,
 				1766974828A94D9800F9C449 /* Root */,
 				1766978428AA946400F9C449 /* Model */,
 				1766974628A94D8200F9C449 /* Core */,
 				1766976928A983A800F9C449 /* Back Stack */,
 				17D8ADF128B55338003D201C /* Layouts */,
+				17D8AE0628B562AD003D201C /* Style */,
 				17D8ADDB28B52D7C003D201C /* Metrics */,
-				170B0D0928A6DDF50033029D /* Assets.xcassets */,
-				170B0D0B28A6DDF50033029D /* LaunchScreen.storyboard */,
-				170B0D0E28A6DDF50033029D /* Info.plist */,
-				1766976528A964A900F9C449 /* AppDelegate.swift */,
+				17D8ADF828B559FB003D201C /* Resources */,
+				17D8ADFF28B560DF003D201C /* Generated */,
 			);
 			path = Todo;
 			sourceTree = "<group>";
@@ -221,7 +238,6 @@
 				1766974328A94D6E00F9C449 /* ReactiveView.swift */,
 				1766974C28A94E3300F9C449 /* ReactiveViewController.swift */,
 				1766973F28A94D5200F9C449 /* ScreenProxy.swift */,
-				1766978728AAD84200F9C449 /* ScreenReactive.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -295,12 +311,14 @@
 			isa = PBXGroup;
 			children = (
 				17D8ADDE28B52EEE003D201C /* Spacing.swift */,
+				1735B3E628B578E700C773E1 /* Font.swift */,
 				17D8ADEB28B55317003D201C /* Opacity.swift */,
 				17D8ADED28B5531A003D201C /* Width.swift */,
 				17D8ADEF28B5532C003D201C /* Percentage.swift */,
 				17D8ADE328B539E9003D201C /* Height.swift */,
 				17D8ADE528B54463003D201C /* Inset.swift */,
 				17D8ADE928B5526B003D201C /* CornerRadius.swift */,
+				17D8ADF528B556B4003D201C /* BorderWidth.swift */,
 			);
 			path = Metrics;
 			sourceTree = "<group>";
@@ -312,6 +330,48 @@
 				17D8ADF328B5535D003D201C /* LayoutBuilder.swift */,
 			);
 			path = Layouts;
+			sourceTree = "<group>";
+		};
+		17D8ADF728B559C7003D201C /* App */ = {
+			isa = PBXGroup;
+			children = (
+				1766976528A964A900F9C449 /* AppDelegate.swift */,
+				1766978228AA944C00F9C449 /* Primitives.swift */,
+				17D8ADE728B551F5003D201C /* Metrics.swift */,
+				17D8AE0728B562B9003D201C /* Theme.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		17D8ADF828B559FB003D201C /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				170B0D0B28A6DDF50033029D /* LaunchScreen.storyboard */,
+				1735B3FA28B587C600C773E1 /* Localizable.strings */,
+				170B0D0E28A6DDF50033029D /* Info.plist */,
+				17D8ADF928B55D93003D201C /* Icons.xcassets */,
+				17D8ADFB28B55DA1003D201C /* Images.xcassets */,
+				17D8ADFD28B55DA9003D201C /* Colors.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		17D8ADFF28B560DF003D201C /* Generated */ = {
+			isa = PBXGroup;
+			children = (
+				17D8AE0028B560DF003D201C /* Strings.swift */,
+				17D8AE0128B560DF003D201C /* Images.swift */,
+				17D8AE0228B560DF003D201C /* Colors.swift */,
+			);
+			path = Generated;
+			sourceTree = "<group>";
+		};
+		17D8AE0628B562AD003D201C /* Style */ = {
+			isa = PBXGroup;
+			children = (
+				17D8AE0928B56321003D201C /* Text.swift */,
+			);
+			path = Style;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -405,6 +465,7 @@
 			knownRegions = (
 				en,
 				Base,
+				eo,
 			);
 			mainGroup = 170B0CF428A6DDF40033029D;
 			packageReferences = (
@@ -428,8 +489,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1735B3F828B587C600C773E1 /* Localizable.strings in Resources */,
+				17D8ADFC28B55DA1003D201C /* Images.xcassets in Resources */,
+				17D8ADFE28B55DA9003D201C /* Colors.xcassets in Resources */,
+				17D8ADFA28B55D93003D201C /* Icons.xcassets in Resources */,
 				170B0D0D28A6DDF50033029D /* LaunchScreen.storyboard in Resources */,
-				170B0D0A28A6DDF50033029D /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -454,7 +518,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				17D8AE0328B560DF003D201C /* Strings.swift in Sources */,
 				1766976428A9616800F9C449 /* TodoListWorkflow.swift in Sources */,
+				1735B3E728B578E700C773E1 /* Font.swift in Sources */,
 				17D8ADEC28B55317003D201C /* Opacity.swift in Sources */,
 				1766973E28A94D4300F9C449 /* Event.swift in Sources */,
 				1766974028A94D5200F9C449 /* ScreenProxy.swift in Sources */,
@@ -464,6 +530,7 @@
 				1766976628A964A900F9C449 /* AppDelegate.swift in Sources */,
 				1766977D28AA6EE600F9C449 /* TodoWorkflow.swift in Sources */,
 				17D8ADE828B551F5003D201C /* Metrics.swift in Sources */,
+				17D8AE0428B560DF003D201C /* Images.swift in Sources */,
 				1766977928A9CEC800F9C449 /* TodoEditWorkflow.swift in Sources */,
 				1766976828A9692F00F9C449 /* RootWorkflow.swift in Sources */,
 				1766975328A94EE300F9C449 /* WelcomeWorkflow.swift in Sources */,
@@ -473,18 +540,21 @@
 				1766976B28A983BA00F9C449 /* BackStackScreen.swift in Sources */,
 				1766974228A94D6100F9C449 /* ReactiveScreen.swift in Sources */,
 				1766975128A94EB500F9C449 /* WelcomeView.swift in Sources */,
+				17D8AE0A28B56321003D201C /* Text.swift in Sources */,
 				17D8ADE428B539E9003D201C /* Height.swift in Sources */,
 				17D8ADEA28B5526B003D201C /* CornerRadius.swift in Sources */,
 				1766974F28A94E8C00F9C449 /* WelcomeScreen.swift in Sources */,
 				1766977328A9CC8900F9C449 /* TodoEditScreen.swift in Sources */,
 				1766975D28A95FCE00F9C449 /* TodoListScreen.swift in Sources */,
-				1766978828AAD84300F9C449 /* ScreenReactive.swift in Sources */,
 				17D8ADF028B5532C003D201C /* Percentage.swift in Sources */,
+				17D8ADF628B556B4003D201C /* BorderWidth.swift in Sources */,
 				1766974428A94D6E00F9C449 /* ReactiveView.swift in Sources */,
 				1733301628AC75510002C9BF /* Reactive.swift in Sources */,
 				17D8ADE628B54463003D201C /* Inset.swift in Sources */,
 				17F7F2B628AB3FA700846774 /* Binding.swift in Sources */,
 				1766976228A9607500F9C449 /* Todo.swift in Sources */,
+				17D8AE0528B560DF003D201C /* Colors.swift in Sources */,
+				17D8AE0828B562B9003D201C /* Theme.swift in Sources */,
 				17D8ADF428B5535D003D201C /* LayoutBuilder.swift in Sources */,
 				1766976F28A983ED00F9C449 /* ScreenWrapperViewController.swift in Sources */,
 				1766974D28A94E3300F9C449 /* ReactiveViewController.swift in Sources */,
@@ -533,6 +603,15 @@
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
+		1735B3FA28B587C600C773E1 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1735B3F928B587C600C773E1 /* eo */,
+				1735B3FB28B587E100C773E1 /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
@@ -540,6 +619,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
@@ -600,6 +680,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
@@ -658,7 +739,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Todo/Info.plist;
+				INFOPLIST_FILE = Todo/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -684,7 +765,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Todo/Info.plist;
+				INFOPLIST_FILE = Todo/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";

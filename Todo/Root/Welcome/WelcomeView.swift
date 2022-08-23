@@ -3,32 +3,21 @@ import Layoutless
 
 extension Welcome {
 	final class View: UI.View {
-		private let welcomeLabel = UILabel()
-		private let nameField = UITextField()
-		private let loginButton = UIButton()
+		private let welcomeLabel = UILabel(style: .welcome)
+		private let nameField = UITextField(style: .name)
+		private let loginButton = UIButton(style: .login)
 
 		init(screen: some ScreenProxy<Screen>) {
 			super.init(frame: .zero)
 
-			let name = screen.reactive.name
-			let canLogIn = name.map(\.isEmpty).map(!)
-			let loginButtonAlpha = canLogIn.map { $0 ? 1 : 0.5 as CGFloat }
-
-			welcomeLabel.text = "Welcome! Please Enter Your Name"
-			welcomeLabel.textAlignment = .center
-
-			nameField <~ name
-			nameField.reactive.editedText ~> screen.reactive.nameTextEdited
-			nameField.backgroundColor = UIColor(white: 0.92, alpha: 1.0)
-
-			loginButton.setTitle("Login", for: .normal)
-			loginButton.backgroundColor = UIColor(red: 41 / 255, green: 150 / 255, blue: 204 / 255, alpha: 1.0)
-			loginButton.reactive.isEnabled <~ canLogIn
-			loginButton.reactive.alpha <~ loginButtonAlpha
-			loginButton.reactive.tap ~> screen.reactive.loginTapped
+			screen.name ~> nameField
+			screen.nameTextEdited <~ nameField.reactive.editedText
+			screen.canLogIn ~> loginButton.reactive.isEnabled
+			screen.canLogIn.map { $0 ? .full : .disabled } ~> loginButton.reactive.opacity
+			screen.loginTapped <~ loginButton.reactive.tap
 		}
 
-		required init?(coder: NSCoder) {
+		required init(coder: NSCoder) {
 			fatalError()
 		}
 
@@ -53,4 +42,25 @@ extension Welcome.View: ReactiveView {
 // MARK: -
 extension Welcome.Screen: ReactiveScreen {
 	typealias View = Welcome.View
+}
+
+// MARK: -
+private extension Style where View == UILabel {
+	static let welcome = Self {
+		$0.text = "Welcome! Please Enter Your Name"
+	}.centered
+}
+
+// MARK: -
+private extension Style where View == UITextField {
+	static let name = Self {
+		$0.backgroundColor = Color.Background.TextField.name.color
+	}
+}
+
+// MARK: -
+private extension Style where View == UIButton {
+	static let login = Self {
+		$0.setTitle("Login", for: .normal)
+	}.adding(.primary)
 }

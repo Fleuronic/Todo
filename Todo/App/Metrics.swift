@@ -9,3 +9,11 @@ extension Spacing.Vertical {
 extension Insets.Horizontal {
 	static let element: Self = 12
 }
+
+extension BorderWidth {
+	static let field: Self = 1
+}
+
+extension Opacity {
+	static let disabled: Self = 0.5
+}

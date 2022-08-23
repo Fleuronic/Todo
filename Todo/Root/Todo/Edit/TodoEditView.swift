@@ -3,25 +3,19 @@ import Layoutless
 
 extension Todo.Edit {
 	final class View: UI.View {
-		private let titleField = UITextField()
-		private let noteField = UITextView()
+		private let titleField = UITextField(style: .title)
+		private let noteField = UITextView(style: .note)
 
 		init(screen: some ScreenProxy<Screen>) {
 			super.init(frame: .zero)
 
-			titleField <~ screen.reactive.title
-			titleField.reactive.editedText ~> screen.reactive.titleTextEdited
-			titleField.textAlignment = .center
-			titleField.layer.borderWidth = 1
-			titleField.layer.borderColor = UIColor.black.cgColor
-
-			noteField <~ screen.reactive.note
-			noteField.reactive.editedText ~> screen.reactive.noteTextEdited
-			noteField.layer.borderWidth = 1
-			noteField.layer.borderColor = UIColor.gray.cgColor
+			screen.title ~> titleField
+			screen.titleTextEdited <~ titleField.reactive.editedText
+			screen.note ~> noteField
+			screen.noteTextEdited <~ noteField.reactive.editedText
 		}
 
-		required init?(coder aDecoder: NSCoder) {
+		required init(coder: NSCoder) {
 			fatalError()
 		}
 
@@ -42,4 +36,20 @@ extension Todo.Edit.View: ReactiveView {
 // MARK: -
 extension Todo.Edit.Screen: ReactiveScreen {
 	typealias View = Todo.Edit.View
+}
+
+// MARK: -
+private extension Style where View == UITextField {
+	static let title = Self {
+		$0.borderWidth = BorderWidth.field
+		$0.layer.borderColor = Color.Border.TextField.primary.color.cgColor
+	}.centered
+}
+
+// MARK: -
+private extension Style where View == UITextView {
+	static let note = Self {
+		$0.borderWidth = BorderWidth.field
+		$0.layer.borderColor = Color.Border.TextField.secondary.color.cgColor
+	}
 }

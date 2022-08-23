@@ -37,13 +37,13 @@ class ReactiveViewController<View: ReactiveView>: ScreenViewController<View.Scre
 
 // MARK: -
 extension ReactiveViewController: ScreenProxy {
-	func source<T>(for keyPath: KeyPath<View.Screen, T>) -> SafeSignal<T> {
+	subscript<T>(dynamicMember keyPath: KeyPath<View.Screen, T>) -> SafeSignal<T> {
 		context
 			.map { $0.0[keyPath: keyPath] }
 			.prepend(screen[keyPath: keyPath])
 	}
 
-	func target<T>(for keyPath: KeyPath<View.Screen, Event<T>>) -> Bond<T> {
+	subscript<T>(dynamicMember keyPath: KeyPath<View.Screen, Event<T>>) -> Bond<T> {
 		.init(target: self) { base, value in
 			base.screen[keyPath: keyPath](value)
 		}

@@ -5,25 +5,21 @@ import Layoutless
 
 extension Todo.List {
 	final class View: UI.View {
-		private let titleLabel = UILabel()
+		private let titleLabel = UILabel(style: .title)
 		private let tableView = UITableView()
 
 		init(screen: some ScreenProxy<Screen>) {
 			super.init(frame: .zero)
 
-			backgroundColor = .white
-			titleLabel.text = "What do you have to do?"
-			titleLabel.textAlignment = .center
-			tableView.reactive.selectedRowIndexPath.map(\.row) ~> screen.reactive.rowSelected
-			
-			screen.reactive.todoTitles
+			screen.todoTitles
 				.diff()
 				.bind(to: tableView, cellType: UITableViewCell.self) { cell, title in
 					cell.textLabel?.text = title
 				}
+			screen.rowSelected <~ tableView.reactive.selectedRowIndexPath.map(\.row)
 		}
 
-		required init?(coder aDecoder: NSCoder) {
+		required init(coder: NSCoder) {
 			fatalError()
 		}
 
@@ -44,4 +40,11 @@ extension Todo.List.View: ReactiveView {
 // MARK: -
 extension Todo.List.Screen: ReactiveScreen {
 	typealias View = Todo.List.View
+}
+
+// MARK: -
+private extension Style where View == UILabel {
+	static let title = Self {
+		$0.text = "What do you have to do?"
+	}.centered
 }
