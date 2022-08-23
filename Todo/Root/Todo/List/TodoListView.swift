@@ -8,7 +8,7 @@ extension Todo.List {
 		private let titleLabel = UILabel()
 		private let tableView = UITableView()
 
-		init<T: ScreenProxy>(screen: T) where T.Screen == Screen {
+		init(screen: some ScreenProxy<Screen>) {
 			super.init(frame: .zero)
 
 			backgroundColor = .white
@@ -28,10 +28,10 @@ extension Todo.List {
 		}
 
 		override var subviewsLayout: AnyLayout {
-			stack(.vertical)(
-				titleLabel,
+			stack(.vertical) {
+				titleLabel
 				tableView
-			).fillingParent()
+			}.fillingParent()
 		}
 	}
 }

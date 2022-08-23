@@ -7,7 +7,7 @@ extension Welcome {
 		private let nameField = UITextField()
 		private let loginButton = UIButton()
 
-		init<T: ScreenProxy>(screen: T) where T.Screen == Screen {
+		init(screen: some ScreenProxy<Screen>) {
 			super.init(frame: .zero)
 
 			let name = screen.reactive.name
@@ -18,7 +18,7 @@ extension Welcome {
 			welcomeLabel.textAlignment = .center
 
 			nameField <~ name
-			nameField.reactive.text.ignoreNils().removeDuplicates() ~> screen.reactive.nameTextEdited
+			nameField.reactive.editedText ~> screen.reactive.nameTextEdited
 			nameField.backgroundColor = UIColor(white: 0.92, alpha: 1.0)
 
 			loginButton.setTitle("Login", for: .normal)
@@ -33,19 +33,14 @@ extension Welcome {
 		}
 
 		override var subviewsLayout: AnyLayout {
-			stack(.vertical)(
-				UIView().addingLayout(welcomeLabel.centeringInParent()),
-				stack(.vertical, spacing: 12)(
-					nameField.sizing(toHeight: 44),
-					loginButton.sizing(toHeight: 44)
-				).insetting(
-					leftBy: 12,
-					rightBy: 12,
-					topBy: 0,
-					bottomBy: 0
-				).centeringVerticallyInParent(),
+			stack(.vertical) {
+				UIView().addingLayout(welcomeLabel.centeringInParent())
+				stack(.vertical, spacing: .element) {
+					nameField.sizing(toHeight: .element)
+					loginButton.sizing(toHeight: .element)
+				}.insetBy(horizontalInsets: .element).centeringVerticallyInParent()
 				UIView()
-			).fillingParent()
+			}.fillingParent()
 		}
 	}
 }

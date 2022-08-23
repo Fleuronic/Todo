@@ -2,7 +2,7 @@ import WorkflowUI
 import ReactiveKit
 import Bond
 
-protocol ScreenProxy {
+protocol ScreenProxy<Screen> {
 	associatedtype Screen: WorkflowUI.Screen
 
 	func source<T>(for keyPath: KeyPath<Screen, T>) -> SafeSignal<T>
@@ -14,4 +14,3 @@ extension ScreenProxy {
 		.init(base: self)
 	}
 }
-

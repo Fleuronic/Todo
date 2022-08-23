@@ -1,8 +1,9 @@
 import UIKit
 import WorkflowUI
+import Layoutless
 
 protocol ReactiveView: UIView {
 	associatedtype Screen: WorkflowUI.Screen
 
-	init<T: ScreenProxy>(screen: T) where T.Screen == Screen
+	init(screen: some ScreenProxy<Screen>)
 }

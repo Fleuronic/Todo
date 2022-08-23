@@ -12,6 +12,7 @@
 		170B0D1828A6DDF60033029D /* TodoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 170B0D1728A6DDF60033029D /* TodoTests.swift */; };
 		170B0D2228A6DDF60033029D /* TodoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 170B0D2128A6DDF60033029D /* TodoUITests.swift */; };
 		170B0D2428A6DDF60033029D /* TodoUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 170B0D2328A6DDF60033029D /* TodoUITestsLaunchTests.swift */; };
+		1733301628AC75510002C9BF /* Reactive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1733301528AC75510002C9BF /* Reactive.swift */; };
 		1766973E28A94D4300F9C449 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1766973D28A94D4300F9C449 /* Event.swift */; };
 		1766974028A94D5200F9C449 /* ScreenProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1766973F28A94D5200F9C449 /* ScreenProxy.swift */; };
 		1766974228A94D6100F9C449 /* ReactiveScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1766974128A94D6100F9C449 /* ReactiveScreen.swift */; };
@@ -37,6 +38,16 @@
 		1766978328AA944C00F9C449 /* Primitives.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1766978228AA944C00F9C449 /* Primitives.swift */; };
 		1766978828AAD84300F9C449 /* ScreenReactive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1766978728AAD84200F9C449 /* ScreenReactive.swift */; };
 		1766978B28AB02A000F9C449 /* Bond in Frameworks */ = {isa = PBXBuildFile; productRef = 1766978A28AB02A000F9C449 /* Bond */; };
+		17D8ADDF28B52EEE003D201C /* Spacing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D8ADDE28B52EEE003D201C /* Spacing.swift */; };
+		17D8ADE228B530FC003D201C /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D8ADE128B530FC003D201C /* Stack.swift */; };
+		17D8ADE428B539E9003D201C /* Height.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D8ADE328B539E9003D201C /* Height.swift */; };
+		17D8ADE628B54463003D201C /* Inset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D8ADE528B54463003D201C /* Inset.swift */; };
+		17D8ADE828B551F5003D201C /* Metrics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D8ADE728B551F5003D201C /* Metrics.swift */; };
+		17D8ADEA28B5526B003D201C /* CornerRadius.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D8ADE928B5526B003D201C /* CornerRadius.swift */; };
+		17D8ADEC28B55317003D201C /* Opacity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D8ADEB28B55317003D201C /* Opacity.swift */; };
+		17D8ADEE28B5531A003D201C /* Width.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D8ADED28B5531A003D201C /* Width.swift */; };
+		17D8ADF028B5532C003D201C /* Percentage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D8ADEF28B5532C003D201C /* Percentage.swift */; };
+		17D8ADF428B5535D003D201C /* LayoutBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D8ADF328B5535D003D201C /* LayoutBuilder.swift */; };
 		17F7F2B628AB3FA700846774 /* Binding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F7F2B528AB3FA700846774 /* Binding.swift */; };
 		17F7F2B928AB42DF00846774 /* Layoutless in Frameworks */ = {isa = PBXBuildFile; productRef = 17F7F2B828AB42DF00846774 /* Layoutless */; };
 /* End PBXBuildFile section */
@@ -68,6 +79,7 @@
 		170B0D1D28A6DDF60033029D /* TodoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TodoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		170B0D2128A6DDF60033029D /* TodoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoUITests.swift; sourceTree = "<group>"; };
 		170B0D2328A6DDF60033029D /* TodoUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		1733301528AC75510002C9BF /* Reactive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reactive.swift; sourceTree = "<group>"; };
 		1766973D28A94D4300F9C449 /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		1766973F28A94D5200F9C449 /* ScreenProxy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenProxy.swift; sourceTree = "<group>"; };
 		1766974128A94D6100F9C449 /* ReactiveScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReactiveScreen.swift; sourceTree = "<group>"; };
@@ -91,6 +103,16 @@
 		1766977C28AA6EE600F9C449 /* TodoWorkflow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoWorkflow.swift; sourceTree = "<group>"; };
 		1766978228AA944C00F9C449 /* Primitives.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Primitives.swift; sourceTree = "<group>"; };
 		1766978728AAD84200F9C449 /* ScreenReactive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenReactive.swift; sourceTree = "<group>"; };
+		17D8ADDE28B52EEE003D201C /* Spacing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spacing.swift; sourceTree = "<group>"; };
+		17D8ADE128B530FC003D201C /* Stack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stack.swift; sourceTree = "<group>"; };
+		17D8ADE328B539E9003D201C /* Height.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Height.swift; sourceTree = "<group>"; };
+		17D8ADE528B54463003D201C /* Inset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Inset.swift; sourceTree = "<group>"; };
+		17D8ADE728B551F5003D201C /* Metrics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Metrics.swift; sourceTree = "<group>"; };
+		17D8ADE928B5526B003D201C /* CornerRadius.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CornerRadius.swift; sourceTree = "<group>"; };
+		17D8ADEB28B55317003D201C /* Opacity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Opacity.swift; sourceTree = "<group>"; };
+		17D8ADED28B5531A003D201C /* Width.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Width.swift; sourceTree = "<group>"; };
+		17D8ADEF28B5532C003D201C /* Percentage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Percentage.swift; sourceTree = "<group>"; };
+		17D8ADF328B5535D003D201C /* LayoutBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutBuilder.swift; sourceTree = "<group>"; };
 		17F7F2B528AB3FA700846774 /* Binding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Binding.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -147,10 +169,13 @@
 			isa = PBXGroup;
 			children = (
 				1766978228AA944C00F9C449 /* Primitives.swift */,
+				17D8ADE728B551F5003D201C /* Metrics.swift */,
 				1766974828A94D9800F9C449 /* Root */,
 				1766978428AA946400F9C449 /* Model */,
 				1766974628A94D8200F9C449 /* Core */,
 				1766976928A983A800F9C449 /* Back Stack */,
+				17D8ADF128B55338003D201C /* Layouts */,
+				17D8ADDB28B52D7C003D201C /* Metrics */,
 				170B0D0928A6DDF50033029D /* Assets.xcassets */,
 				170B0D0B28A6DDF50033029D /* LaunchScreen.storyboard */,
 				170B0D0E28A6DDF50033029D /* Info.plist */,
@@ -191,6 +216,7 @@
 			children = (
 				1766973D28A94D4300F9C449 /* Event.swift */,
 				17F7F2B528AB3FA700846774 /* Binding.swift */,
+				1733301528AC75510002C9BF /* Reactive.swift */,
 				1766974128A94D6100F9C449 /* ReactiveScreen.swift */,
 				1766974328A94D6E00F9C449 /* ReactiveView.swift */,
 				1766974C28A94E3300F9C449 /* ReactiveViewController.swift */,
@@ -263,6 +289,29 @@
 				1766976128A9607500F9C449 /* Todo.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		17D8ADDB28B52D7C003D201C /* Metrics */ = {
+			isa = PBXGroup;
+			children = (
+				17D8ADDE28B52EEE003D201C /* Spacing.swift */,
+				17D8ADEB28B55317003D201C /* Opacity.swift */,
+				17D8ADED28B5531A003D201C /* Width.swift */,
+				17D8ADEF28B5532C003D201C /* Percentage.swift */,
+				17D8ADE328B539E9003D201C /* Height.swift */,
+				17D8ADE528B54463003D201C /* Inset.swift */,
+				17D8ADE928B5526B003D201C /* CornerRadius.swift */,
+			);
+			path = Metrics;
+			sourceTree = "<group>";
+		};
+		17D8ADF128B55338003D201C /* Layouts */ = {
+			isa = PBXGroup;
+			children = (
+				17D8ADE128B530FC003D201C /* Stack.swift */,
+				17D8ADF328B5535D003D201C /* LayoutBuilder.swift */,
+			);
+			path = Layouts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -406,26 +455,37 @@
 			buildActionMask = 2147483647;
 			files = (
 				1766976428A9616800F9C449 /* TodoListWorkflow.swift in Sources */,
+				17D8ADEC28B55317003D201C /* Opacity.swift in Sources */,
 				1766973E28A94D4300F9C449 /* Event.swift in Sources */,
 				1766974028A94D5200F9C449 /* ScreenProxy.swift in Sources */,
 				1766976D28A983D100F9C449 /* BackStackContainer.swift in Sources */,
 				1766976028A9601B00F9C449 /* TodoListView.swift in Sources */,
+				17D8ADEE28B5531A003D201C /* Width.swift in Sources */,
 				1766976628A964A900F9C449 /* AppDelegate.swift in Sources */,
 				1766977D28AA6EE600F9C449 /* TodoWorkflow.swift in Sources */,
+				17D8ADE828B551F5003D201C /* Metrics.swift in Sources */,
 				1766977928A9CEC800F9C449 /* TodoEditWorkflow.swift in Sources */,
 				1766976828A9692F00F9C449 /* RootWorkflow.swift in Sources */,
 				1766975328A94EE300F9C449 /* WelcomeWorkflow.swift in Sources */,
+				17D8ADE228B530FC003D201C /* Stack.swift in Sources */,
 				1766977B28A9E96200F9C449 /* TodoEditView.swift in Sources */,
+				17D8ADDF28B52EEE003D201C /* Spacing.swift in Sources */,
 				1766976B28A983BA00F9C449 /* BackStackScreen.swift in Sources */,
 				1766974228A94D6100F9C449 /* ReactiveScreen.swift in Sources */,
 				1766975128A94EB500F9C449 /* WelcomeView.swift in Sources */,
+				17D8ADE428B539E9003D201C /* Height.swift in Sources */,
+				17D8ADEA28B5526B003D201C /* CornerRadius.swift in Sources */,
 				1766974F28A94E8C00F9C449 /* WelcomeScreen.swift in Sources */,
 				1766977328A9CC8900F9C449 /* TodoEditScreen.swift in Sources */,
 				1766975D28A95FCE00F9C449 /* TodoListScreen.swift in Sources */,
 				1766978828AAD84300F9C449 /* ScreenReactive.swift in Sources */,
+				17D8ADF028B5532C003D201C /* Percentage.swift in Sources */,
 				1766974428A94D6E00F9C449 /* ReactiveView.swift in Sources */,
+				1733301628AC75510002C9BF /* Reactive.swift in Sources */,
+				17D8ADE628B54463003D201C /* Inset.swift in Sources */,
 				17F7F2B628AB3FA700846774 /* Binding.swift in Sources */,
 				1766976228A9607500F9C449 /* Todo.swift in Sources */,
+				17D8ADF428B5535D003D201C /* LayoutBuilder.swift in Sources */,
 				1766976F28A983ED00F9C449 /* ScreenWrapperViewController.swift in Sources */,
 				1766974D28A94E3300F9C449 /* ReactiveViewController.swift in Sources */,
 				1766978328AA944C00F9C449 /* Primitives.swift in Sources */,

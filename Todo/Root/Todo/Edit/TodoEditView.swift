@@ -6,17 +6,17 @@ extension Todo.Edit {
 		private let titleField = UITextField()
 		private let noteField = UITextView()
 
-		init<T: ScreenProxy>(screen: T) where T.Screen == Screen {
+		init(screen: some ScreenProxy<Screen>) {
 			super.init(frame: .zero)
 
 			titleField <~ screen.reactive.title
-			titleField.reactive.text.ignoreNils() ~> screen.reactive.titleTextEdited
+			titleField.reactive.editedText ~> screen.reactive.titleTextEdited
 			titleField.textAlignment = .center
 			titleField.layer.borderWidth = 1
 			titleField.layer.borderColor = UIColor.black.cgColor
 
 			noteField <~ screen.reactive.note
-			noteField.reactive.text.ignoreNils() ~> screen.reactive.noteTextEdited
+			noteField.reactive.editedText ~> screen.reactive.noteTextEdited
 			noteField.layer.borderWidth = 1
 			noteField.layer.borderColor = UIColor.gray.cgColor
 		}
@@ -26,10 +26,10 @@ extension Todo.Edit {
 		}
 
 		override var subviewsLayout: AnyLayout {
-			stack(.vertical, spacing: 12)(
-				titleField.sizing(toHeight: 44),
+			stack(.vertical, spacing: .element) {
+				titleField.sizing(toHeight: .element)
 				noteField
-			).fillingParent()
+			}.fillingParent()
 		}
 	}
 }

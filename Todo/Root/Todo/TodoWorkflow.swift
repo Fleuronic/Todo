@@ -119,7 +119,6 @@ extension Todo.Workflow.ListAction: WorkflowAction {
 		case .finish:
 			return .end
 		}
-
 		return nil
 	}
 }
@@ -136,7 +135,6 @@ extension Todo.Workflow.EditAction: WorkflowAction {
 		case .cancel:
 			state.step = .list
 		}
-
 		return nil
 	}
 }

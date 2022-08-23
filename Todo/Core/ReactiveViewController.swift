@@ -29,7 +29,6 @@ class ReactiveViewController<View: ReactiveView>: ScreenViewController<View.Scre
 		])
 	}
 
-
 	override func screenDidChange(from previousScreen: View.Screen, previousEnvironment: ViewEnvironment) {
 		super.screenDidChange(from: previousScreen, previousEnvironment: previousEnvironment)
 		context.send((screen, environment))
