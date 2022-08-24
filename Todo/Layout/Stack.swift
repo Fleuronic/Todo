@@ -43,3 +43,16 @@ public func stack(
 		configure: configure
 	)
 }
+
+@resultBuilder struct VerticallyStacked<T: Stacking> {
+	static func buildBlock(_ layouts: AnyLayout?...) -> Layout<UIStackView> {
+		stack(
+			layouts.compactMap { $0 },
+			axis: .vertical,
+			spacing: T.verticalSpacing.value,
+			distribution: .fill,
+			alignment: .fill,
+			configure: { _ in }
+		)
+	}
+}

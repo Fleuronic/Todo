@@ -1,8 +1,14 @@
 import UIKit
-import Layoutless
 
-extension Style where View == UIButton {
-	static let primary = Self {
-		$0.backgroundColor = Color.tint.color
+extension UIButton {
+	enum Style {
+		case primary
+	}
+
+	func style(_ style: Style) -> Self {
+		switch style {
+		case .primary:
+			return background { $0.Button.primary }
+		}
 	}
 }

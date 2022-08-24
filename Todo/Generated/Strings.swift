@@ -42,10 +42,8 @@ public enum Strings {
     /// Welcome! Please enter your name.
     public static let prompt = Strings.tr("Localizable", "Welcome.prompt")
     public enum Title {
-      public enum Button {
-        /// Log In
-        public static let login = Strings.tr("Localizable", "Welcome.title.button.login")
-      }
+      /// Log In
+      public static let login = Strings.tr("Localizable", "Welcome.title.login")
     }
   }
 }

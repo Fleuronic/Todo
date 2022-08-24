@@ -19,8 +19,13 @@ extension Border.Width: ExpressibleByIntegerLiteral {
 
 // MARK: -
 public extension UIView {
-	var borderWidth: Border.Width {
-		get { .init(value: layer.borderWidth) }
-		set { layer.borderWidth = newValue.value }
+	func borderWidth(_ width: (Border.Width.Type) -> Border.Width) -> Self {
+		layer.borderWidth = width(Border.Width.self).value
+		return self
+	}
+
+	func borderColor(_ color: (Colors.Border.Type) -> ColorAsset) -> Self {
+		layer.borderColor = color(Colors.Border.self).color.cgColor
+		return self
 	}
 }

@@ -4,3 +4,9 @@ extension Todo.List {
 		let rowSelected: Event<Int>
 	}
 }
+
+extension Todo.List.Screen {
+	var prompt: LocalizableString {
+		{ $0.Todo.List.prompt }
+	}
+}

@@ -18,8 +18,11 @@ public typealias AssetColorTypeAlias = ColorAsset.Color
 // MARK: - Asset Catalogs
 
 // swiftlint:disable identifier_name line_length nesting type_body_length type_name
-public enum Color {
+public enum Colors {
   public enum Background {
+    public enum Button {
+      public static let primary = ColorAsset(name: "Background/Button/Primary")
+    }
     public enum TextField {
       public static let name = ColorAsset(name: "Background/Text Field/Name")
     }
@@ -30,7 +33,6 @@ public enum Color {
       public static let secondary = ColorAsset(name: "Border/Text Field/Secondary")
     }
   }
-  public static let tint = ColorAsset(name: "Tint")
 }
 // swiftlint:enable identifier_name line_length nesting type_body_length type_name
 

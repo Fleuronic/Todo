@@ -1,5 +1,5 @@
 "Welcome.prompt" = "Welcome! Please enter your name.";
-"Welcome.title.button.login" = "Log In";
+"Welcome.title.login" = "Log In";
 "Todo.List.title" = "Welcome %@";
 "Todo.List.title.button.newTodo" = "New Todo";
 "Todo.List.prompt" = "What do you have to do?";

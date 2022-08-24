@@ -2,41 +2,31 @@ import UIKit
 import Layoutless
 
 extension Todo.Edit {
-	final class View: ReactiveView<Screen> {
-		override func layout(with screen: some ScreenProxy<Screen>) -> AnyLayout {
-			let titleField = UITextField(style: .title)
-			let noteField = UITextView(style: .note)
+	final class View: UIView {}
+}
 
-			screen.title ~> titleField
-			screen.titleTextEdited <~ titleField.reactive.editedText
-			screen.note ~> noteField
-			screen.noteTextEdited <~ noteField.reactive.editedText
+extension Todo.Edit.View: Stacking {
+	typealias Screen = Todo.Edit.Screen
 
-			return stack(.vertical, spacing: .element) {
-				titleField.sizing(toHeight: .element)
-				noteField
-			}.fillingParent()
-		}
+	static var verticalSpacing: Spacing.Vertical { .element }
+
+	@VerticallyStacked<Self> func content(screen: some ScreenProxy<Screen>) -> Layout<UIStackView> {
+		UITextField
+			.text(screen.title)
+			.edited(screen.titleTextEdited)
+			.borderWidth { $0.field }
+			.borderColor { $0.TextField.primary }
+			.centered
+			.sizing(toHeight: .element)
+		UITextView
+			.text(screen.note)
+			.edited(screen.noteTextEdited)
+			.borderWidth { $0.field }
+			.borderColor { $0.TextField.secondary }
 	}
 }
 
 // MARK: -
 extension Todo.Edit.Screen: ReactiveScreen {
 	typealias View = Todo.Edit.View
-}
-
-// MARK: -
-private extension Style where View == UITextField {
-	static let title = Self {
-		$0.borderWidth = Border.Width.field
-		$0.layer.borderColor = Color.Border.TextField.primary.color.cgColor
-	}.centered
-}
-
-// MARK: -
-private extension Style where View == UITextView {
-	static let note = Self {
-		$0.borderWidth = Border.Width.field
-		$0.layer.borderColor = Color.Border.TextField.secondary.color.cgColor
-	}
 }

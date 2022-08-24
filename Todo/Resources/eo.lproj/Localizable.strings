@@ -1,5 +1,5 @@
 "Welcome.prompt" = "Bonvenon! Bonvolu enigi vian nomon.";
-"Welcome.title.button.login" = "Ensaluti";
+"Welcome.title.login" = "Ensaluti";
 "Todo.List.title" = "Bonvenon %@";
 "Todo.List.title.button.newTodo" = "Nova Tasko";
 "Todo.List.prompt" = "Kion vi devas fari?";

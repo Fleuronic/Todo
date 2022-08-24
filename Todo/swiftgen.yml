@@ -1,19 +1,12 @@
 input_dir: Resources
 output_dir: Generated
 xcassets:
-  - inputs: Images.xcassets
-    outputs:
-      templateName: swift5
-      output: Images.swift
-      params:
-        enumName: Image
-        publicAccess: true
   - inputs: Colors.xcassets
     outputs:
       templateName: swift5
       output: Colors.swift
       params:
-        enumName: Color
+        enumName: Colors
         publicAccess: true
 strings:
   inputs: en.lproj
