@@ -98,6 +98,7 @@ extension BackStackScreen.BarContent {
 	public enum ButtonContent {
 		case text(String)
 		case icon(UIImage)
+		case back(title: String?)
 	}
 
 	public struct Button {
@@ -110,8 +111,8 @@ extension BackStackScreen.BarContent {
 		}
 
 		/// Convenience factory for a default back button.
-		public static func back(handler: @escaping () -> Void) -> Button {
-			return Button(content: .text("Back"), handler: handler)
+		public static func back(title: String? = nil ,handler: @escaping () -> Void) -> Button {
+			return Button(content: .back(title: title), handler: handler)
 		}
 	}
 }

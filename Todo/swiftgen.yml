@@ -16,7 +16,7 @@ xcassets:
         enumName: Color
         publicAccess: true
 strings:
-  inputs: Base.lproj
+  inputs: en.lproj
   outputs:
     templateName: structured-swift5
     output: Strings.swift

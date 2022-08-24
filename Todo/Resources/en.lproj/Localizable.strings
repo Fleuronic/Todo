@@ -1,7 +1,7 @@
-/* 
-  Localizable.strings
-  Todo
-
-  Created by Jordan Kay on 8/23/22.
-  
-*/
+"Welcome.prompt" = "Welcome! Please enter your name.";
+"Welcome.title.button.login" = "Log In";
+"Todo.List.title" = "Welcome %@";
+"Todo.List.title.button.newTodo" = "New Todo";
+"Todo.List.prompt" = "What do you have to do?";
+"Todo.Edit.title" = "Edit";
+"Todo.Edit.title.button.save" = "Save";

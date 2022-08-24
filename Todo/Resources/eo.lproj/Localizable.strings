@@ -1,7 +1,7 @@
-/* 
-  Localizable.strings
-  Todo
-
-  Created by Jordan Kay on 8/23/22.
-  
-*/
+"Welcome.prompt" = "Bonvenon! Bonvolu enigi vian nomon.";
+"Welcome.title.button.login" = "Ensaluti";
+"Todo.List.title" = "Bonvenon %@";
+"Todo.List.title.button.newTodo" = "Nova Tasko";
+"Todo.List.prompt" = "Kion vi devas fari?";
+"Todo.Edit.title" = "Redakti";
+"Todo.Edit.title.button.save" = "Konservi";

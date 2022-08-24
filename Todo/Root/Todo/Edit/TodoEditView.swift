@@ -2,35 +2,22 @@ import UIKit
 import Layoutless
 
 extension Todo.Edit {
-	final class View: UI.View {
-		private let titleField = UITextField(style: .title)
-		private let noteField = UITextView(style: .note)
-
-		init(screen: some ScreenProxy<Screen>) {
-			super.init(frame: .zero)
+	final class View: ReactiveView<Screen> {
+		override func layout(with screen: some ScreenProxy<Screen>) -> AnyLayout {
+			let titleField = UITextField(style: .title)
+			let noteField = UITextView(style: .note)
 
 			screen.title ~> titleField
 			screen.titleTextEdited <~ titleField.reactive.editedText
 			screen.note ~> noteField
 			screen.noteTextEdited <~ noteField.reactive.editedText
-		}
 
-		required init(coder: NSCoder) {
-			fatalError()
-		}
-
-		override var subviewsLayout: AnyLayout {
-			stack(.vertical, spacing: .element) {
+			return stack(.vertical, spacing: .element) {
 				titleField.sizing(toHeight: .element)
 				noteField
 			}.fillingParent()
 		}
 	}
-}
-
-// MARK: -
-extension Todo.Edit.View: ReactiveView {
-	typealias Screen = Todo.Edit.Screen
 }
 
 // MARK: -
@@ -41,7 +28,7 @@ extension Todo.Edit.Screen: ReactiveScreen {
 // MARK: -
 private extension Style where View == UITextField {
 	static let title = Self {
-		$0.borderWidth = BorderWidth.field
+		$0.borderWidth = Border.Width.field
 		$0.layer.borderColor = Color.Border.TextField.primary.color.cgColor
 	}.centered
 }
@@ -49,7 +36,7 @@ private extension Style where View == UITextField {
 // MARK: -
 private extension Style where View == UITextView {
 	static let note = Self {
-		$0.borderWidth = BorderWidth.field
+		$0.borderWidth = Border.Width.field
 		$0.layer.borderColor = Color.Border.TextField.secondary.color.cgColor
 	}
 }

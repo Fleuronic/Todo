@@ -2,12 +2,16 @@
 
 import UIKit
 
-public struct BorderWidth {
-	let value: CGFloat
+public enum Border {}
+
+public extension Border {
+	struct Width {
+		let value: CGFloat
+	}
 }
 
 // MARK: -
-extension BorderWidth: ExpressibleByIntegerLiteral {
+extension Border.Width: ExpressibleByIntegerLiteral {
 	public init(integerLiteral: IntegerLiteralType) {
 		value = .init(integerLiteral)
 	}
@@ -15,7 +19,7 @@ extension BorderWidth: ExpressibleByIntegerLiteral {
 
 // MARK: -
 public extension UIView {
-	var borderWidth: BorderWidth {
+	var borderWidth: Border.Width {
 		get { .init(value: layer.borderWidth) }
 		set { layer.borderWidth = newValue.value }
 	}

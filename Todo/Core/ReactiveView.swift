@@ -2,8 +2,17 @@ import UIKit
 import WorkflowUI
 import Layoutless
 
-protocol ReactiveView: UIView {
-	associatedtype Screen: WorkflowUI.Screen
+class ReactiveView<Screen: WorkflowUI.Screen>: UIView {
+	init(screen: some ScreenProxy<Screen>) {
+		super.init(frame: .zero)
+		layout(with: screen).layout(in: self)
+	}
 
-	init(screen: some ScreenProxy<Screen>)
+	required init(coder: NSCoder) {
+		fatalError()
+	}
+
+	func layout(with screen: some ScreenProxy<Screen>) -> AnyLayout {
+		EmptyLayout()
+	}
 }

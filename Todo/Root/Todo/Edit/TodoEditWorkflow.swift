@@ -55,12 +55,12 @@ private extension Todo.Edit.Workflow {
 		.init(
 			screen: screen(state: state, sink: sink).asAnyScreen(),
 			barContent: .init(
-				title: "Edit",
+				title: Strings.Todo.Edit.title,
 				leftItem: .button(
 					.back { sink.send(.discardChanges) }
 				),
 				rightItem: .button(
-					.init(content: .text("Save")) { sink.send(.saveChanges) }
+					.init(content: .text(Strings.Todo.Edit.Title.Button.save)) { sink.send(.saveChanges) }
 				)
 			)
 		)

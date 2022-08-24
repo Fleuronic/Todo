@@ -10,7 +10,7 @@ extension Insets.Horizontal {
 	static let element: Self = 12
 }
 
-extension BorderWidth {
+extension Border.Width {
 	static let field: Self = 1
 }
 

@@ -122,6 +122,9 @@ extension ScreenWrapperViewController {
 
 			case .icon(let image):
 				self.image = image
+
+			case .back:
+				self.image = .init(systemName: "chevron.left")!
 			}
 
 			handler = button.handler

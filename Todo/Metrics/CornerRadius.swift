@@ -2,12 +2,16 @@
 
 import UIKit
 
-public struct CornerRadius {
-	let value: CGFloat
+public enum Corner {}
+
+public extension Corner {
+	struct Radius {
+		let value: CGFloat
+	}
 }
 
 // MARK: -
-extension CornerRadius: ExpressibleByIntegerLiteral {
+extension Corner.Radius: ExpressibleByIntegerLiteral {
 	public init(integerLiteral: IntegerLiteralType) {
 		value = .init(integerLiteral)
 	}
@@ -15,7 +19,7 @@ extension CornerRadius: ExpressibleByIntegerLiteral {
 
 // MARK: -
 public extension UIView {
-	var cornerRadius: CornerRadius {
+	var cornerRadius: Corner.Radius {
 		get { .init(value: layer.cornerRadius) }
 		set { layer.cornerRadius = newValue.value }
 	}

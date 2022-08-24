@@ -50,12 +50,12 @@ private extension Todo.List.Workflow {
 		.init(
 			screen: screen(state: state, sink: sink).asAnyScreen(),
 			barContent: .init(
-				title: "Welcome \(name)",
+				title: Strings.Todo.List.title(name),
 				leftItem: .button(
 					.back { sink.send(.finish) }
 				),
 				rightItem: .button(
-					.init(content: .text("New Todo")) { sink.send(.createTodo) }
+					.init(content: .text(Strings.Todo.List.Title.Button.newTodo)) { sink.send(.createTodo) }
 				)
 			)
 		)
