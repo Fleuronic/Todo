@@ -85,3 +85,6 @@ extension Todo.Edit.Workflow.Action: WorkflowAction {
 		return nil
 	}
 }
+
+// MARK: -
+extension Todo.Edit.Workflow.Output: Equatable {}

@@ -53,9 +53,17 @@ extension Welcome.Workflow.Action {
 		switch self {
 		case let .updateName(name):
 			state.name = name
-		case .logIn:
+		case .logIn where !state.name.isEmpty:
 			return .user(name: state.name)
+		default:
+			break
 		}
 		return nil
 	}
 }
+
+// MARK: -
+extension Welcome.Workflow.State: Equatable {}
+
+// MARK: -
+extension Welcome.Workflow.Output: Equatable {}

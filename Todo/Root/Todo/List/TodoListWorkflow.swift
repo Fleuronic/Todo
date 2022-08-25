@@ -85,3 +85,6 @@ extension Todo.List.Workflow.Action {
 		}
 	}
 }
+
+// MARK: -
+extension Todo.List.Workflow.Output: Equatable {}

@@ -87,3 +87,6 @@ extension Root.Workflow.Action: WorkflowAction {
 		return nil
 	}
 }
+
+// MARK: -
+extension Root.Workflow.State: Equatable {}

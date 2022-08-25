@@ -138,3 +138,9 @@ extension Todo.Workflow.EditAction: WorkflowAction {
 		return nil
 	}
 }
+
+// MARK: -
+extension Todo.Workflow.State: Equatable {}
+
+// MARK: -
+extension Todo.Workflow.State.Step: Equatable {}
