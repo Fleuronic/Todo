@@ -19,12 +19,30 @@
       }
     },
     {
+      "identity" : "geometric",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Fleuronic/Geometric",
+      "state" : {
+        "branch" : "main",
+        "revision" : "d17a0ffe366f3d291e3de75f7e78b1266fa29b28"
+      }
+    },
+    {
       "identity" : "layoutless",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/DeclarativeHub/Layoutless",
       "state" : {
         "revision" : "50ae5ab4cb9bf676c1901f4ba0f267f27e68d0a7",
         "version" : "0.4.3"
+      }
+    },
+    {
+      "identity" : "metric",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Fleuronic/Metric.git",
+      "state" : {
+        "branch" : "main",
+        "revision" : "bf20aec16b411435049a0763c247d5e7030b56c8"
       }
     },
     {
@@ -43,6 +61,15 @@
       "state" : {
         "revision" : "c43bae3dac73fdd3cb906bd5a1914686ca71ed3c",
         "version" : "6.7.0"
+      }
+    },
+    {
+      "identity" : "telemetric",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Fleuronic/Telemetric",
+      "state" : {
+        "branch" : "main",
+        "revision" : "27fdb182072beb5692e978c7027b943f1c05b664"
       }
     },
     {

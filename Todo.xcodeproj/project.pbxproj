@@ -8,10 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		170B0D0D28A6DDF50033029D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 170B0D0B28A6DDF50033029D /* LaunchScreen.storyboard */; };
-		1735B3E728B578E700C773E1 /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1735B3E628B578E700C773E1 /* Font.swift */; };
 		1735B3F828B587C600C773E1 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1735B3FA28B587C600C773E1 /* Localizable.strings */; };
 		173BB7AF28B6D0FF00BA34EE /* WorkflowTesting in Frameworks */ = {isa = PBXBuildFile; productRef = 173BB7AE28B6D0FF00BA34EE /* WorkflowTesting */; };
-		174E249F28B5BFD900C3A1B6 /* Spacer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 174E249E28B5BFD900C3A1B6 /* Spacer.swift */; };
+		17481DC128B8151600FC48FF /* Geometric in Frameworks */ = {isa = PBXBuildFile; productRef = 17481DC028B8151600FC48FF /* Geometric */; };
 		174E24A128B5C29600C3A1B6 /* Icons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 174E24A028B5C29600C3A1B6 /* Icons.xcassets */; };
 		1766973E28A94D4300F9C449 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1766973D28A94D4300F9C449 /* Event.swift */; };
 		1766974028A94D5200F9C449 /* ScreenProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1766973F28A94D5200F9C449 /* ScreenProxy.swift */; };
@@ -36,10 +35,6 @@
 		1766977B28A9E96200F9C449 /* TodoEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1766977A28A9E96200F9C449 /* TodoEditView.swift */; };
 		1766977D28AA6EE600F9C449 /* TodoWorkflow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1766977C28AA6EE600F9C449 /* TodoWorkflow.swift */; };
 		1766978328AA944C00F9C449 /* Primitives.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1766978228AA944C00F9C449 /* Primitives.swift */; };
-		1766978B28AB02A000F9C449 /* Bond in Frameworks */ = {isa = PBXBuildFile; productRef = 1766978A28AB02A000F9C449 /* Bond */; };
-		177A27AD28B66CB2005DC4EB /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 177A27AC28B66CB2005DC4EB /* View.swift */; };
-		177A27AF28B674C4005DC4EB /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 177A27AE28B674C4005DC4EB /* Button.swift */; };
-		177A27B128B68038005DC4EB /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 177A27B028B68038005DC4EB /* Data.swift */; };
 		177A27B328B6AB07005DC4EB /* Stacking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 177A27B228B6AB07005DC4EB /* Stacking.swift */; };
 		17952D7E28B6E27B00C1805F /* RootWorkflowTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17952D7D28B6E27B00C1805F /* RootWorkflowTests.swift */; };
 		17952D8128B6F44300C1805F /* WelcomeWorkflowTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17952D8028B6F44300C1805F /* WelcomeWorkflowTests.swift */; };
@@ -47,24 +42,13 @@
 		17952D8828B6F8AC00C1805F /* TodoEditWorkflowTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17952D8728B6F8AC00C1805F /* TodoEditWorkflowTests.swift */; };
 		17952D8A28B6F9DE00C1805F /* TodoWorkflowTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17952D8928B6F9DE00C1805F /* TodoWorkflowTests.swift */; };
 		17952D8D28B7B85C00C1805F /* AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17952D8C28B7B85C00C1805F /* AppTests.swift */; };
-		17D8ADDF28B52EEE003D201C /* Spacing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D8ADDE28B52EEE003D201C /* Spacing.swift */; };
-		17D8ADE228B530FC003D201C /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D8ADE128B530FC003D201C /* Stack.swift */; };
-		17D8ADE428B539E9003D201C /* Height.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D8ADE328B539E9003D201C /* Height.swift */; };
-		17D8ADE628B54463003D201C /* Inset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D8ADE528B54463003D201C /* Inset.swift */; };
+		17AC987A28B8193D00F71655 /* Telemetric in Frameworks */ = {isa = PBXBuildFile; productRef = 17AC987928B8193D00F71655 /* Telemetric */; };
 		17D8ADE828B551F5003D201C /* Metrics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D8ADE728B551F5003D201C /* Metrics.swift */; };
-		17D8ADEA28B5526B003D201C /* CornerRadius.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D8ADE928B5526B003D201C /* CornerRadius.swift */; };
-		17D8ADEC28B55317003D201C /* Opacity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D8ADEB28B55317003D201C /* Opacity.swift */; };
-		17D8ADEE28B5531A003D201C /* Width.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D8ADED28B5531A003D201C /* Width.swift */; };
-		17D8ADF028B5532C003D201C /* Percentage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D8ADEF28B5532C003D201C /* Percentage.swift */; };
-		17D8ADF428B5535D003D201C /* LayoutBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D8ADF328B5535D003D201C /* LayoutBuilder.swift */; };
-		17D8ADF628B556B4003D201C /* BorderWidth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D8ADF528B556B4003D201C /* BorderWidth.swift */; };
 		17D8ADFE28B55DA9003D201C /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 17D8ADFD28B55DA9003D201C /* Colors.xcassets */; };
 		17D8AE0328B560DF003D201C /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D8AE0028B560DF003D201C /* Strings.swift */; };
 		17D8AE0428B560DF003D201C /* Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D8AE0128B560DF003D201C /* Images.swift */; };
 		17D8AE0528B560DF003D201C /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D8AE0228B560DF003D201C /* Colors.swift */; };
 		17D8AE0828B562B9003D201C /* Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D8AE0728B562B9003D201C /* Style.swift */; };
-		17D8AE0A28B56321003D201C /* Text.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D8AE0928B56321003D201C /* Text.swift */; };
-		17F7F2B928AB42DF00846774 /* Layoutless in Frameworks */ = {isa = PBXBuildFile; productRef = 17F7F2B828AB42DF00846774 /* Layoutless */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,10 +64,8 @@
 /* Begin PBXFileReference section */
 		170B0D0C28A6DDF50033029D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		170B0D0E28A6DDF50033029D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1735B3E628B578E700C773E1 /* Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
 		1735B3FB28B587E100C773E1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = eo.lproj/Localizable.strings; sourceTree = "<group>"; };
 		174E249D28B58A6E00C3A1B6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
-		174E249E28B5BFD900C3A1B6 /* Spacer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spacer.swift; sourceTree = "<group>"; };
 		174E24A028B5C29600C3A1B6 /* Icons.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Icons.xcassets; sourceTree = "<group>"; };
 		1766973D28A94D4300F9C449 /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		1766973F28A94D5200F9C449 /* ScreenProxy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenProxy.swift; sourceTree = "<group>"; };
@@ -107,9 +89,6 @@
 		1766977A28A9E96200F9C449 /* TodoEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoEditView.swift; sourceTree = "<group>"; };
 		1766977C28AA6EE600F9C449 /* TodoWorkflow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoWorkflow.swift; sourceTree = "<group>"; };
 		1766978228AA944C00F9C449 /* Primitives.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Primitives.swift; sourceTree = "<group>"; };
-		177A27AC28B66CB2005DC4EB /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
-		177A27AE28B674C4005DC4EB /* Button.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
-		177A27B028B68038005DC4EB /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 		177A27B228B6AB07005DC4EB /* Stacking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stacking.swift; sourceTree = "<group>"; };
 		17952D7828B6DEB600C1805F /* Todo.app */ = {isa = PBXFileReference; lastKnownFileType = wrapper.application; name = Todo.app; path = "../../../../Library/Developer/Xcode/DerivedData/Todo-hgmgrqmfblaozsfrkobfvwbjoomy/Build/Products/Debug-iphonesimulator/Todo.app"; sourceTree = "<group>"; };
 		17952D7928B6DEB600C1805F /* TodoTests.xctest */ = {isa = PBXFileReference; lastKnownFileType = file; name = TodoTests.xctest; path = "../../../../Library/Developer/Xcode/DerivedData/Todo-hgmgrqmfblaozsfrkobfvwbjoomy/Build/Products/Debug-iphonesimulator/TodoTests.xctest"; sourceTree = "<group>"; };
@@ -121,23 +100,12 @@
 		17952D8728B6F8AC00C1805F /* TodoEditWorkflowTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoEditWorkflowTests.swift; sourceTree = "<group>"; };
 		17952D8928B6F9DE00C1805F /* TodoWorkflowTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoWorkflowTests.swift; sourceTree = "<group>"; };
 		17952D8C28B7B85C00C1805F /* AppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTests.swift; sourceTree = "<group>"; };
-		17D8ADDE28B52EEE003D201C /* Spacing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spacing.swift; sourceTree = "<group>"; };
-		17D8ADE128B530FC003D201C /* Stack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stack.swift; sourceTree = "<group>"; };
-		17D8ADE328B539E9003D201C /* Height.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Height.swift; sourceTree = "<group>"; };
-		17D8ADE528B54463003D201C /* Inset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Inset.swift; sourceTree = "<group>"; };
 		17D8ADE728B551F5003D201C /* Metrics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Metrics.swift; sourceTree = "<group>"; };
-		17D8ADE928B5526B003D201C /* CornerRadius.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CornerRadius.swift; sourceTree = "<group>"; };
-		17D8ADEB28B55317003D201C /* Opacity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Opacity.swift; sourceTree = "<group>"; };
-		17D8ADED28B5531A003D201C /* Width.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Width.swift; sourceTree = "<group>"; };
-		17D8ADEF28B5532C003D201C /* Percentage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Percentage.swift; sourceTree = "<group>"; };
-		17D8ADF328B5535D003D201C /* LayoutBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutBuilder.swift; sourceTree = "<group>"; };
-		17D8ADF528B556B4003D201C /* BorderWidth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BorderWidth.swift; sourceTree = "<group>"; };
 		17D8ADFD28B55DA9003D201C /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		17D8AE0028B560DF003D201C /* Strings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
 		17D8AE0128B560DF003D201C /* Images.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Images.swift; sourceTree = "<group>"; };
 		17D8AE0228B560DF003D201C /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		17D8AE0728B562B9003D201C /* Style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Style.swift; sourceTree = "<group>"; };
-		17D8AE0928B56321003D201C /* Text.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Text.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,9 +113,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				17F7F2B928AB42DF00846774 /* Layoutless in Frameworks */,
+				17AC987A28B8193D00F71655 /* Telemetric in Frameworks */,
+				17481DC128B8151600FC48FF /* Geometric in Frameworks */,
 				1766974B28A94E0900F9C449 /* WorkflowUI in Frameworks */,
-				1766978B28AB02A000F9C449 /* Bond in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -180,11 +148,7 @@
 				17D8ADF728B559C7003D201C /* App */,
 				1766974828A94D9800F9C449 /* Root */,
 				1766978428AA946400F9C449 /* Model */,
-				1766974628A94D8200F9C449 /* Core */,
-				1766976928A983A800F9C449 /* Back Stack */,
-				17D8ADF128B55338003D201C /* Layout */,
-				17D8AE0628B562AD003D201C /* Style */,
-				17D8ADDB28B52D7C003D201C /* Metrics */,
+				1766974628A94D8200F9C449 /* Ergo */,
 				17D8ADF828B559FB003D201C /* Resources */,
 				17D8ADFF28B560DF003D201C /* Generated */,
 			);
@@ -214,7 +178,7 @@
 			path = Welcome;
 			sourceTree = "<group>";
 		};
-		1766974628A94D8200F9C449 /* Core */ = {
+		1766974628A94D8200F9C449 /* Ergo */ = {
 			isa = PBXGroup;
 			children = (
 				1766973D28A94D4300F9C449 /* Event.swift */,
@@ -223,8 +187,11 @@
 				1766973F28A94D5200F9C449 /* ScreenProxy.swift */,
 				1766974128A94D6100F9C449 /* ReactiveScreen.swift */,
 				1766974C28A94E3300F9C449 /* ReactiveViewController.swift */,
+				1766976A28A983BA00F9C449 /* BackStackScreen.swift */,
+				1766976C28A983D100F9C449 /* BackStackContainer.swift */,
+				1766976E28A983ED00F9C449 /* ScreenWrapperViewController.swift */,
 			);
-			path = Core;
+			path = Ergo;
 			sourceTree = "<group>";
 		};
 		1766974728A94D9300F9C449 /* Todo */ = {
@@ -252,16 +219,6 @@
 			children = (
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		1766976928A983A800F9C449 /* Back Stack */ = {
-			isa = PBXGroup;
-			children = (
-				1766976A28A983BA00F9C449 /* BackStackScreen.swift */,
-				1766976C28A983D100F9C449 /* BackStackContainer.swift */,
-				1766976E28A983ED00F9C449 /* ScreenWrapperViewController.swift */,
-			);
-			path = "Back Stack";
 			sourceTree = "<group>";
 		};
 		1766977028A9CC7400F9C449 /* Edit */ = {
@@ -301,32 +258,6 @@
 			path = Products;
 			sourceTree = "<group>";
 		};
-		17D8ADDB28B52D7C003D201C /* Metrics */ = {
-			isa = PBXGroup;
-			children = (
-				17D8ADDE28B52EEE003D201C /* Spacing.swift */,
-				1735B3E628B578E700C773E1 /* Font.swift */,
-				17D8ADEB28B55317003D201C /* Opacity.swift */,
-				17D8ADED28B5531A003D201C /* Width.swift */,
-				17D8ADEF28B5532C003D201C /* Percentage.swift */,
-				17D8ADE328B539E9003D201C /* Height.swift */,
-				17D8ADE528B54463003D201C /* Inset.swift */,
-				17D8ADE928B5526B003D201C /* CornerRadius.swift */,
-				17D8ADF528B556B4003D201C /* BorderWidth.swift */,
-			);
-			path = Metrics;
-			sourceTree = "<group>";
-		};
-		17D8ADF128B55338003D201C /* Layout */ = {
-			isa = PBXGroup;
-			children = (
-				17D8ADE128B530FC003D201C /* Stack.swift */,
-				174E249E28B5BFD900C3A1B6 /* Spacer.swift */,
-				17D8ADF328B5535D003D201C /* LayoutBuilder.swift */,
-			);
-			path = Layout;
-			sourceTree = "<group>";
-		};
 		17D8ADF728B559C7003D201C /* App */ = {
 			isa = PBXGroup;
 			children = (
@@ -360,17 +291,6 @@
 			path = Generated;
 			sourceTree = "<group>";
 		};
-		17D8AE0628B562AD003D201C /* Style */ = {
-			isa = PBXGroup;
-			children = (
-				17D8AE0928B56321003D201C /* Text.swift */,
-				177A27AE28B674C4005DC4EB /* Button.swift */,
-				177A27B028B68038005DC4EB /* Data.swift */,
-				177A27AC28B66CB2005DC4EB /* View.swift */,
-			);
-			path = Style;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -389,8 +309,8 @@
 			name = Todo;
 			packageProductDependencies = (
 				1766974A28A94E0900F9C449 /* WorkflowUI */,
-				1766978A28AB02A000F9C449 /* Bond */,
-				17F7F2B828AB42DF00846774 /* Layoutless */,
+				17481DC028B8151600FC48FF /* Geometric */,
+				17AC987928B8193D00F71655 /* Telemetric */,
 			);
 			productName = Todo;
 			productReference = 17952D7B28B6E17900C1805F /* Todo.app */;
@@ -449,8 +369,8 @@
 			mainGroup = 170B0CF428A6DDF40033029D;
 			packageReferences = (
 				1766973928A9477300F9C449 /* XCRemoteSwiftPackageReference "workflow-swift" */,
-				1766978928AB02A000F9C449 /* XCRemoteSwiftPackageReference "Bond" */,
-				17F7F2B728AB42DF00846774 /* XCRemoteSwiftPackageReference "Layoutless" */,
+				17481DBF28B8151600FC48FF /* XCRemoteSwiftPackageReference "Geometric" */,
+				17AC987828B8193C00F71655 /* XCRemoteSwiftPackageReference "Telemetric" */,
 			);
 			productRefGroup = 170B0CF428A6DDF40033029D;
 			projectDirPath = "";
@@ -490,13 +410,10 @@
 			files = (
 				17D8AE0328B560DF003D201C /* Strings.swift in Sources */,
 				1766976428A9616800F9C449 /* TodoListWorkflow.swift in Sources */,
-				1735B3E728B578E700C773E1 /* Font.swift in Sources */,
-				17D8ADEC28B55317003D201C /* Opacity.swift in Sources */,
 				1766973E28A94D4300F9C449 /* Event.swift in Sources */,
 				1766974028A94D5200F9C449 /* ScreenProxy.swift in Sources */,
 				1766976D28A983D100F9C449 /* BackStackContainer.swift in Sources */,
 				1766976028A9601B00F9C449 /* TodoListView.swift in Sources */,
-				17D8ADEE28B5531A003D201C /* Width.swift in Sources */,
 				1766976628A964A900F9C449 /* AppDelegate.swift in Sources */,
 				1766977D28AA6EE600F9C449 /* TodoWorkflow.swift in Sources */,
 				17D8ADE828B551F5003D201C /* Metrics.swift in Sources */,
@@ -504,34 +421,21 @@
 				1766977928A9CEC800F9C449 /* TodoEditWorkflow.swift in Sources */,
 				1766976828A9692F00F9C449 /* RootWorkflow.swift in Sources */,
 				1766975328A94EE300F9C449 /* WelcomeWorkflow.swift in Sources */,
-				17D8ADE228B530FC003D201C /* Stack.swift in Sources */,
 				1766977B28A9E96200F9C449 /* TodoEditView.swift in Sources */,
-				17D8ADDF28B52EEE003D201C /* Spacing.swift in Sources */,
 				1766976B28A983BA00F9C449 /* BackStackScreen.swift in Sources */,
 				1766974228A94D6100F9C449 /* ReactiveScreen.swift in Sources */,
 				1766975128A94EB500F9C449 /* WelcomeView.swift in Sources */,
-				17D8AE0A28B56321003D201C /* Text.swift in Sources */,
-				17D8ADE428B539E9003D201C /* Height.swift in Sources */,
-				17D8ADEA28B5526B003D201C /* CornerRadius.swift in Sources */,
 				1766974F28A94E8C00F9C449 /* WelcomeScreen.swift in Sources */,
 				1766977328A9CC8900F9C449 /* TodoEditScreen.swift in Sources */,
-				177A27AD28B66CB2005DC4EB /* View.swift in Sources */,
 				1766975D28A95FCE00F9C449 /* TodoListScreen.swift in Sources */,
-				17D8ADF028B5532C003D201C /* Percentage.swift in Sources */,
-				17D8ADF628B556B4003D201C /* BorderWidth.swift in Sources */,
 				1766974428A94D6E00F9C449 /* Layoutable.swift in Sources */,
-				17D8ADE628B54463003D201C /* Inset.swift in Sources */,
 				1766976228A9607500F9C449 /* Todo.swift in Sources */,
 				177A27B328B6AB07005DC4EB /* Stacking.swift in Sources */,
 				17D8AE0528B560DF003D201C /* Colors.swift in Sources */,
 				17D8AE0828B562B9003D201C /* Style.swift in Sources */,
-				177A27B128B68038005DC4EB /* Data.swift in Sources */,
-				174E249F28B5BFD900C3A1B6 /* Spacer.swift in Sources */,
-				17D8ADF428B5535D003D201C /* LayoutBuilder.swift in Sources */,
 				1766976F28A983ED00F9C449 /* ScreenWrapperViewController.swift in Sources */,
 				1766974D28A94E3300F9C449 /* ReactiveViewController.swift in Sources */,
 				1766978328AA944C00F9C449 /* Primitives.swift in Sources */,
-				177A27AF28B674C4005DC4EB /* Button.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -831,6 +735,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		17481DBF28B8151600FC48FF /* XCRemoteSwiftPackageReference "Geometric" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Fleuronic/Geometric";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
 		1766973928A9477300F9C449 /* XCRemoteSwiftPackageReference "workflow-swift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/square/workflow-swift";
@@ -839,20 +751,12 @@
 				minimumVersion = "1.0.0-rc.1";
 			};
 		};
-		1766978928AB02A000F9C449 /* XCRemoteSwiftPackageReference "Bond" */ = {
+		17AC987828B8193C00F71655 /* XCRemoteSwiftPackageReference "Telemetric" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/DeclarativeHub/Bond";
+			repositoryURL = "https://github.com/Fleuronic/Telemetric";
 			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 7.0.0;
-			};
-		};
-		17F7F2B728AB42DF00846774 /* XCRemoteSwiftPackageReference "Layoutless" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/DeclarativeHub/Layoutless";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 0.4.3;
+				branch = main;
+				kind = branch;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
@@ -863,20 +767,20 @@
 			package = 1766973928A9477300F9C449 /* XCRemoteSwiftPackageReference "workflow-swift" */;
 			productName = WorkflowTesting;
 		};
+		17481DC028B8151600FC48FF /* Geometric */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 17481DBF28B8151600FC48FF /* XCRemoteSwiftPackageReference "Geometric" */;
+			productName = Geometric;
+		};
 		1766974A28A94E0900F9C449 /* WorkflowUI */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 1766973928A9477300F9C449 /* XCRemoteSwiftPackageReference "workflow-swift" */;
 			productName = WorkflowUI;
 		};
-		1766978A28AB02A000F9C449 /* Bond */ = {
+		17AC987928B8193D00F71655 /* Telemetric */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 1766978928AB02A000F9C449 /* XCRemoteSwiftPackageReference "Bond" */;
-			productName = Bond;
-		};
-		17F7F2B828AB42DF00846774 /* Layoutless */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 17F7F2B728AB42DF00846774 /* XCRemoteSwiftPackageReference "Layoutless" */;
-			productName = Layoutless;
+			package = 17AC987828B8193C00F71655 /* XCRemoteSwiftPackageReference "Telemetric" */;
+			productName = Telemetric;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

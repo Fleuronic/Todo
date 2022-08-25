@@ -1,5 +1,6 @@
 import UIKit
 import Layoutless
+import Geometric
 
 extension Welcome {
 	final class View: UIView {}
@@ -20,7 +21,7 @@ extension Welcome.View: Stacking {
 			UITextField
 				.text(screen.name)
 				.edited(screen.nameTextEdited)
-				.background { $0.TextField.name }
+				.backgroundColor { $0.TextField.name }
 				.sizing(toHeight: .element)
 			UIButton
 				.tap(screen.loginTapped)

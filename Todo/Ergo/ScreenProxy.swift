@@ -1,3 +1,5 @@
+// Copyright © Fleuronic LLC. All rights reserved.
+
 import WorkflowUI
 import ReactiveKit
 import Bond

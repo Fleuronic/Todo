@@ -1,5 +1,6 @@
 import UIKit
 import Layoutless
+import Metric
 
 public func stack(
 	_ axis: NSLayoutConstraint.Axis,
@@ -44,6 +45,14 @@ public func stack(
 	)
 }
 
+// MARK: -
+@resultBuilder public struct LayoutBuilder {
+	static func buildBlock(_ layouts: AnyLayout?...) -> [AnyLayout] {
+		layouts.compactMap { $0 }
+	}
+}
+
+// MARK: -
 @resultBuilder struct VerticallyStacked<T: Stacking> {
 	static func buildBlock(_ layouts: AnyLayout?...) -> Layout<UIStackView> {
 		stack(
