@@ -6,15 +6,13 @@ import typealias Ergo.Event
 public extension Welcome {
 	struct Screen {
 		let username: String
-		let email: String
-		let password: String
+		let phoneNumber: String
 		let isVerifyingEmail: Bool
 		let hasInvalidEmail: Bool
  		let errorMessage: String?
 		let usernameTextEdited: Event<String>
-		let emailTextEdited: Event<String>
-		let passwordTextEdited: Event<String>
-		let signupTapped: Event<Void>
+		let phoneNumberTextEdited: Event<String>
+		let submitTapped: Event<Void>
 	}
 }
 
@@ -34,27 +32,19 @@ extension Welcome.Screen {
 		{ $0.Placeholder.username }
 	}
 
-	var emailPlaceholder: ScreenString {
-		{ $0.Placeholder.email }
+	var phoneNumberPlaceholder: ScreenString {
+		{ $0.Placeholder.phoneNumber }
 	}
 
-	var passwordPlaceholder: ScreenString {
-		{ $0.Placeholder.password }
-	}
-
-	var signupTitle: ScreenString {
-		{ $0.Title.signup }
-	}
-
-	var footer: ScreenString {
-		{ $0.footer }
+	var submitTitle: ScreenString {
+		{ $0.Title.submit }
 	}
 
 	var invalidEmailErrorMessage: ScreenString {
 		{ $0.Error.email }
 	}
 
-	var canSignUp: Bool {
-		!username.isEmpty && !email.isEmpty && !password.isEmpty && !isVerifyingEmail && !hasInvalidEmail
+	var canSubmit: Bool {
+		!username.isEmpty && !phoneNumber.isEmpty && !isVerifyingEmail && !hasInvalidEmail
 	}
 }

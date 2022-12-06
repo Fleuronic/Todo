@@ -2,9 +2,8 @@
 
 import class UIKit.UILabel
 import class UIKit.UIFont
+import class Telemetric.Label
 import struct Telemetric.Styled
-import protocol Metric.TextStyle
-import protocol Metric.TextStyled
 
 public enum Text {}
 
@@ -13,7 +12,6 @@ public extension Text {
 	enum Style {
 		case header
 		case prompt
-		case footer
 		case emptyState
 		case error
 	}
@@ -21,8 +19,8 @@ public extension Text {
 
 // MARK: -
 public extension UILabel {
-	static func style(_ style: Text.Style) -> Styled<UILabel> {
-		let styled = Styled(UILabel()).font(style.font)
+	static func style(_ style: Text.Style) -> Styled<Label> {
+		let styled: Styled<Label> = .init().font(style.font)
 
 		switch style {
 		case .header, .prompt:
@@ -31,11 +29,6 @@ public extension UILabel {
 				.multiline
 		case .emptyState:
 			return styled
-				.textColor { $0.secondary }
-		case .footer:
-			return styled
-				.centered
-				.multiline
 				.textColor { $0.secondary }
 		case .error:
 			return styled
@@ -47,8 +40,8 @@ public extension UILabel {
 }
 
 // MARK: -
-extension Text.Style: TextStyle {
-	public var font: UIFont {
+private extension Text.Style {
+	var font: UIFont {
 		switch self {
 		case .header:
 			return
@@ -60,7 +53,7 @@ extension Text.Style: TextStyle {
 				.size(.large)
 				.weight(.light)
 				.italic
-		case .prompt, .footer, .error:
+		case .prompt, .error:
 			return
 				.size(.small)
 		}

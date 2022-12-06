@@ -1,10 +1,8 @@
 "Welcome.Header" = "Bonvenon al Coven";
-"Welcome.Prompt" = "Kreu novan konton sube.";
+"Welcome.Prompt" = "Elektu uzantnomon aŭ enigu vian ekzistantan, plus vian telefonnumeron.";
 "Welcome.Placeholder.username" = "Uzantnomo";
-"Welcome.Placeholder.email" = "Retpoŝta Adreso";
-"Welcome.Placeholder.password" = "Pasvorto";
-"Welcome.Title.signup" = "Registriĝi";
-"Welcome.Footer" = "Ĉu vi jam havas konton? Ensalutu per viaj akreditaĵoj anstataŭe.";
+"Welcome.Placeholder.phoneNumber" = "Telefonnumero";
+"Welcome.Title.signup" = "Submeti";
 "Welcome.Error.email" = "Retpoŝta adreso estas nevalida.";
 
 "Todo.List.title" = "Taskoj de %@";

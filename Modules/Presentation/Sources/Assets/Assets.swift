@@ -7,7 +7,7 @@ import class UIKit.UIColor
 import struct Metric.Percentage
 import struct Metric.Opacity
 import struct Telemetric.Styled
-import protocol Metric.TextStyled
+import protocol Telemetric.TextStylable
 
 public typealias SharedString = (Strings.Type) -> String
 
@@ -42,7 +42,7 @@ public extension Styled where Value: UIButton {
 }
 
 // MARK: -
-public extension Styled where Value: TextStyled {
+public extension Styled where Value: TextStylable {
 	func textColor(color: @escaping (Colors.Text.Type) -> UIColor) -> Self {
 		textColorAsset(color)
 	}

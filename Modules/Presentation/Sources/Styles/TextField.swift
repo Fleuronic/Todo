@@ -1,39 +1,34 @@
 // Copyright © Fleuronic LLC. All rights reserved.
 
 import class UIKit.UITextField
+import class Telemetric.TextField
+import struct Model.Username
 import struct Telemetric.Styled
 
 public extension UITextField {
 	enum Style {
 		case username
-		case email
-		case password
+		case phoneNumber
 		case title
 	}
 }
 
 // MARK: -
 public extension UITextField {
-	static func style(_ style: Style) -> Styled<UITextField> {
+	static func style(_ style: Style) -> Styled<TextField> {
 		switch style {
 		case .username:
 			return .init()
 				.autocorrectionType(.no)
-				.autocapitalizationType(.words)
+				.autocapitalizationType(.none)
+				.acceptedCharacter(Username.regex)
 				.backgroundColor { $0.TextField.info }
 				.borderStyle(.roundedRect)
-		case .email:
+		case .phoneNumber:
 			return .init()
 				.keyboardType(.emailAddress)
 				.autocorrectionType(.no)
 				.autocapitalizationType(.none)
-				.backgroundColor { $0.TextField.info }
-				.borderStyle(.roundedRect)
-		case .password:
-			return .init()
-				.autocorrectionType(.no)
-				.autocapitalizationType(.none)
-				.isSecureTextEntry(true)
 				.backgroundColor { $0.TextField.info }
 				.borderStyle(.roundedRect)
 		case .title:

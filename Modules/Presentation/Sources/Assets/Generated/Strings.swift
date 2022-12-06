@@ -38,27 +38,23 @@ public enum Strings {
   }
 
   public enum Welcome {
-    /// Already have an account? Log in instead.
-    public static let footer = Strings.tr("Localizable", "Welcome.Footer")
     /// Welcome to Coven
     public static let header = Strings.tr("Localizable", "Welcome.Header")
-    /// Create a new account below.
+    /// Choose a username or enter your existing one, along with your phone number.
     public static let prompt = Strings.tr("Localizable", "Welcome.Prompt")
     public enum Error {
       /// Email address is invalid.
       public static let email = Strings.tr("Localizable", "Welcome.Error.email")
     }
     public enum Placeholder {
-      /// Email Address
-      public static let email = Strings.tr("Localizable", "Welcome.Placeholder.email")
-      /// Password
-      public static let password = Strings.tr("Localizable", "Welcome.Placeholder.password")
+      /// Phone Number
+      public static let phoneNumber = Strings.tr("Localizable", "Welcome.Placeholder.phone number")
       /// Username
       public static let username = Strings.tr("Localizable", "Welcome.Placeholder.username")
     }
     public enum Title {
-      /// Sign Up
-      public static let signup = Strings.tr("Localizable", "Welcome.Title.signup")
+      /// Submit
+      public static let submit = Strings.tr("Localizable", "Welcome.Title.submit")
     }
   }
 }

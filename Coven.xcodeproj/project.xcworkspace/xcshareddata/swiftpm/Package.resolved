@@ -47,24 +47,6 @@
         }
       },
       {
-        "package": "Ergo",
-        "repositoryURL": "https://github.com/Fleuronic/Ergo",
-        "state": {
-          "branch": "main",
-          "revision": "80013f9c5cf4333e8296aab3b8d5c60e9d59204f",
-          "version": null
-        }
-      },
-      {
-        "package": "Geometric",
-        "repositoryURL": "https://github.com/Fleuronic/Geometric",
-        "state": {
-          "branch": "main",
-          "revision": "ea82a6d316adfa577b31cdd339add530a727e72b",
-          "version": null
-        }
-      },
-      {
         "package": "Identity",
         "repositoryURL": "https://github.com/JohnSundell/Identity",
         "state": {
@@ -92,15 +74,6 @@
         }
       },
       {
-        "package": "Metric",
-        "repositoryURL": "https://github.com/Fleuronic/Metric.git",
-        "state": {
-          "branch": "main",
-          "revision": "5570cdd9d11b5ec5efb49cc4007e3394799ca0fd",
-          "version": null
-        }
-      },
-      {
         "package": "ReactiveKit",
         "repositoryURL": "https://github.com/DeclarativeHub/ReactiveKit.git",
         "state": {
@@ -125,15 +98,6 @@
           "branch": null,
           "revision": "b835f7e9edb32163418caa533e1cf9d832b23326",
           "version": "0.4.1"
-        }
-      },
-      {
-        "package": "Telemetric",
-        "repositoryURL": "https://github.com/Fleuronic/Telemetric",
-        "state": {
-          "branch": "main",
-          "revision": "bd2bba54ed1135819f3ce857a39401d177ed6679",
-          "version": null
         }
       },
       {

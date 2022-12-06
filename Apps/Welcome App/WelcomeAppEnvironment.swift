@@ -22,8 +22,7 @@ extension Welcome.App {
 extension Welcome.App.Environment {
 	enum Key: String {
 		case initialUsername
-		case initialEmail
-		case initialPassword
+		case initialPhoneNumber
 		case apiKey
 		case apiConfiguration
 	}

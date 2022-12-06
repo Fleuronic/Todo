@@ -1,11 +1,11 @@
-// swift-tools-version:5.5
+// swift-tools-version:5.7
 import PackageDescription
 
 let package = Package(
 	name: "Presentation",
 	defaultLocalization: "en",
 	platforms: [
-		.iOS(.v15)
+		.iOS(.v16)
 	],
 	products: [
 		.library(
@@ -18,8 +18,9 @@ let package = Package(
 		)
 	],
 	dependencies: [
-		.package(url: "https://github.com/Fleuronic/Metric.git", .branch("main")),
-		.package(url: "https://github.com/Fleuronic/Telemetric.git", .branch("main"))
+		.package(name: "Model", path: "../Model"),
+		.package(url: "https://github.com/Fleuronic/Metric.git", branch: "main"),
+		.package(url: "https://github.com/Fleuronic/Telemetric.git", branch: "main")
 	],
 	targets: [
 		.target(
@@ -39,6 +40,7 @@ let package = Package(
 		.target(
 			name: "Styles",
 			dependencies: [
+				"Model",
 				"Telemetric",
 				"Assets",
 				"Metrics"

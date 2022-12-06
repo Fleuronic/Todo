@@ -1,10 +1,10 @@
-// swift-tools-version:5.5
+// swift-tools-version:5.7
 import PackageDescription
 
 let package = Package(
 	name: "EmailableAPI",
 	platforms: [
-		.iOS(.v15)
+		.iOS(.v16)
 	],
 	products: [
 		.library(
@@ -13,7 +13,7 @@ let package = Package(
 		)
 	],
 	dependencies: [
-		.package(url: "https://github.com/Fleuronic/Emissary", .branch("main"))
+		.package(url: "https://github.com/Fleuronic/Emissary", branch: "main")
 	],
 	targets: [
 		.target(

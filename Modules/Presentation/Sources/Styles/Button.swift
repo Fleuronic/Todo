@@ -1,6 +1,7 @@
 // Copyright © Fleuronic LLC. All rights reserved.
 
 import class UIKit.UIButton
+import class Telemetric.Button
 import struct Telemetric.Styled
 
 public extension UIButton {
@@ -8,7 +9,7 @@ public extension UIButton {
 		case primary
 	}
 
-	static func style(_ style: Style) -> Styled<UIButton> {
+	static func style(_ style: Style) -> Styled<Button> {
 		switch style {
 		case .primary:
 			return .init()

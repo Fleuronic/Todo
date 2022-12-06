@@ -99,13 +99,13 @@
             isEnabled = "NO">
          </EnvironmentVariable>
          <EnvironmentVariable
-            key = "initialEmail"
-            value = "jordanekay@mac.com"
+            key = "initialPhoneNumber"
+            value = "678-910-9326"
             isEnabled = "NO">
          </EnvironmentVariable>
          <EnvironmentVariable
-            key = "initialName"
-            value = "Jordan Kay"
+            key = "initialUsername"
+            value = "jordanekay"
             isEnabled = "NO">
          </EnvironmentVariable>
       </EnvironmentVariables>

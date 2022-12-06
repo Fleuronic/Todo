@@ -87,6 +87,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1707A693293AB747008892F4 /* Telemetric */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Telemetric; path = ../Metric/Submodules/Telemetric; sourceTree = "<group>"; };
+		1707A694293E8D7A008892F4 /* Metric */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Metric; path = ../Metric; sourceTree = "<group>"; };
 		1730DB8628E794D400D317A8 /* Todo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Todo.swift; sourceTree = "<group>"; };
 		1730DB8A28E7951900D317A8 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		1730DB9028E8E96700D317A8 /* Emailable API */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = "Emailable API"; path = "Modules/APIs/Emailable API"; sourceTree = "<group>"; };
@@ -121,6 +123,8 @@
 		17D8602428BBFAA100C42970 /* WelcomeAppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WelcomeAppDelegate.swift; path = "Apps/Welcome App/WelcomeAppDelegate.swift"; sourceTree = "<group>"; };
 		17D8602A28BBFAD000C42970 /* RootApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootApp.swift; sourceTree = "<group>"; };
 		17D8602B28BBFAD000C42970 /* RootAppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootAppDelegate.swift; sourceTree = "<group>"; };
+		17E82F07293EB4CA005D28E0 /* Ergo */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Ergo; path = ../Ergo; sourceTree = "<group>"; };
+		17E82F08293EB514005D28E0 /* Geometric */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Geometric; path = ../Metric/Submodules/Geometric; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -183,6 +187,10 @@
 		170B0CF428A6DDF40033029D = {
 			isa = PBXGroup;
 			children = (
+				17E82F08293EB514005D28E0 /* Geometric */,
+				17E82F07293EB4CA005D28E0 /* Ergo */,
+				1707A694293E8D7A008892F4 /* Metric */,
+				1707A693293AB747008892F4 /* Telemetric */,
 				173DD26728C11A7000FF6E7D /* BackStackContainer */,
 				1749DCCE28BB886300C4AFC9 /* Modules */,
 				17D85FEB28BBF62100C42970 /* Apps */,

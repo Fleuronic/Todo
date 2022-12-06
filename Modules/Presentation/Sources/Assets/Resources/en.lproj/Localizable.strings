@@ -1,10 +1,8 @@
 "Welcome.Header" = "Welcome to Coven";
-"Welcome.Prompt" = "Create a new account below.";
+"Welcome.Prompt" = "Choose a username or enter your existing one, along with your phone number.";
 "Welcome.Placeholder.username" = "Username";
-"Welcome.Placeholder.email" = "Email Address";
-"Welcome.Placeholder.password" = "Password";
-"Welcome.Title.signup" = "Sign Up";
-"Welcome.Footer" = "Already have an account? Log in with your credentials instead.";
+"Welcome.Placeholder.phone number" = "Phone Number";
+"Welcome.Title.submit" = "Submit";
 "Welcome.Error.email" = "Email address is invalid.";
 
 "Todo.List.title" = "%@’s Todos";

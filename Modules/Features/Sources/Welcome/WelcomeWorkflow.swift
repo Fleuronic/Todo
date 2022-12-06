@@ -3,6 +3,7 @@
 
 import enum EmailableAPI.Emailable
 import struct Model.User
+import struct Model.Username
 import struct Ergo.RequestWorker
 import struct Ergo.DelayedWorker
 import struct Workflow.Sink
@@ -13,20 +14,17 @@ import protocol Workflow.WorkflowAction
 public extension Welcome {
 	struct Workflow {
 		private let api: Emailable.API
-		private let initialUsername: String
-		private let initialEmail: String
-		private let initialPassword: String
+		private let initialUsername: Username
+		private let initialPhoneNumber: String
 
 		public init(
 			api: Emailable.API,
-			initialUsername: String? = nil,
-			initialEmail: String? = nil,
-			initialPassword: String? = nil
+			initialUsername: Username? = nil,
+			initialPhoneNumber: String? = nil
 		) {
 			self.api = api
-			self.initialUsername = initialUsername ?? ""
-			self.initialEmail = initialEmail ?? ""
-			self.initialPassword = initialPassword ?? ""
+			self.initialUsername = initialUsername ?? .empty
+			self.initialPhoneNumber = initialPhoneNumber ?? .init()
 		}
 	}
 }
@@ -36,9 +34,8 @@ extension Welcome.Workflow: Workflow {
 	public typealias Rendering = Welcome.Screen
 
 	public struct State {
-		var username: String
-		var email: String
-		var password: String
+		var username: Username
+		var phoneNumber: String
 		var invalidEmails: [String] = []
 		var emailVerificationState: Emailable.Email.Verification.State = .idle
 	}
@@ -50,8 +47,7 @@ extension Welcome.Workflow: Workflow {
 	public func makeInitialState() -> State {
 		.init(
 			username: initialUsername,
-			email: initialEmail,
-			password: initialPassword
+			phoneNumber: initialPhoneNumber
 		)
 	}
 
@@ -75,9 +71,8 @@ extension Welcome.Workflow: Workflow {
 // MARK: -
 extension Welcome.Workflow {
 	enum Action: WorkflowAction {
-		case updateUsername(String)
-		case updateEmail(String)
-		case updatePassword(String)
+		case updateUsername(Username)
+		case updatePhoneNumber(String)
 		case verifyEmail
 		case finishEmailVerification(Emailable.Email.Verification.Result)
 		case resetEmailVerification(Void)
@@ -88,16 +83,14 @@ extension Welcome.Workflow {
 private extension Welcome.Workflow {
 	func screen(state: State, sink: Sink<Action>) -> Welcome.Screen {
 		.init(
-			username: state.username,
-			email: state.email,
-			password: state.password,
+			username: state.username.displayValue,
+			phoneNumber: state.phoneNumber,
 			isVerifyingEmail: state.isVerifyingEmail,
 			hasInvalidEmail: state.hasInvalidEmail,
 			errorMessage: state.errorMessage,
-			usernameTextEdited: { sink.send(.updateUsername($0)) },
-			emailTextEdited: { sink.send(.updateEmail($0)) },
-			passwordTextEdited: { sink.send(.updatePassword($0)) },
-			signupTapped: { sink.send(.verifyEmail) }
+			usernameTextEdited: { sink.send(.updateUsername(.init(rawValue: $0))) },
+			phoneNumberTextEdited: { sink.send(.updatePhoneNumber($0)) },
+			submitTapped: { sink.send(.verifyEmail) }
 		)
 	}
 }
@@ -110,10 +103,8 @@ extension Welcome.Workflow.Action {
 		switch self {
 		case let .updateUsername(username):
 			state.username = username
-		case let .updatePassword(password):
-			state.password = password
-		case let .updateEmail(email):
-			state.email = email
+		case let .updatePhoneNumber(phoneNumber):
+			state.phoneNumber = phoneNumber
 			fallthrough
 		case .resetEmailVerification:
 			state.emailVerificationState = .idle
@@ -140,8 +131,7 @@ private extension Welcome.Workflow.State {
 	var user: User {
 		.init(
 			username: username,
-			email: email,
-			password: password
+			phoneNumber: phoneNumber
 		)
 	}
 
@@ -150,7 +140,7 @@ private extension Welcome.Workflow.State {
 	}
 
 	var hasInvalidEmail: Bool {
-		invalidEmails.contains(email.lowercased())
+		invalidEmails.contains(phoneNumber.lowercased())
 	}
 
 	var errorMessage: String? {
@@ -162,7 +152,7 @@ private extension Welcome.Workflow.State {
 	}
 
 	func emailVerificationWorker(using api: Emailable.API) -> RequestWorker<Emailable.Email.Verification.Result>? {
-		emailVerificationState.mapRequesting(.init { await api.verify(email) })
+		emailVerificationState.mapRequesting(.init { await api.verify(phoneNumber) })
 	}
 }
 

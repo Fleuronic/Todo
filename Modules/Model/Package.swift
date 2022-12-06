@@ -1,10 +1,10 @@
-// swift-tools-version:5.5
+// swift-tools-version:5.7
 import PackageDescription
 
 let package = Package(
 	name: "Model",
 	platforms: [
-		.iOS(.v15)
+		.iOS(.v16)
 	],
 	products: [
 		.library(
@@ -13,7 +13,7 @@ let package = Package(
 		)
 	],
 	dependencies: [
-		.package(url: "https://github.com/Fleuronic/Coffin", .branch("main")),
+		.package(url: "https://github.com/Fleuronic/Coffin", branch: "main"),
 		.package(url: "https://github.com/JohnSundell/Identity", from: "0.1.0")
 	],
 	targets: [

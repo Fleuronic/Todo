@@ -2,7 +2,7 @@
 
 import class UIKit.UIWindow
 import class UIKit.UIScreen
-import class WorkflowUI.ContainerViewController
+import class WorkflowUI.WorkflowHostingController
 import protocol UIKit.UIApplicationDelegate
 import protocol Workflow.AnyWorkflowConvertible
 import protocol WorkflowUI.Screen
@@ -18,7 +18,7 @@ extension AppDelegate {
 	func makeWindow() -> UIWindow {
 		let window = UIWindow(frame: UIScreen.main.bounds)
 		window.makeKeyAndVisible()
-		window.rootViewController = ContainerViewController(workflow: workflow)
+		window.rootViewController = WorkflowHostingController(workflow: workflow)
 		return window
 	}
 }
